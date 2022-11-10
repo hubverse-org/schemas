@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Hub administrative settings",
+    "description": "This JSON file provides a schema for modeling hub administrative information.",
+    "type": "object",
+    "properties": {
+        "hub_repository_host": {
+            "description": "The name of the web host for the hub repository",
+            "type": "string",
+            "enum": [
+                "github"
+            ]
+        },
+        "hub_repository_org": {
+            "description": "The organization coordinating the hub",
+            "type": "string",
+            "example": "Infectious-Disease-Modeling-Hubs"
+        },
+        "hub_repository_name": {
+            "description": "The name of the hub repository",
+            "type": "string",
+            "example": "covid19-forecast-hub​​"
+        },
+        "zoltar_project_id": {
+            "description": "The project id of the Hub in Zoltar",
+            "type": "integer",
+            "example": 44
+        },
+        "hub_models": {
+            "description": "Array of ensemble and baseline models produced by the hub",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "team_abbr": {
+                        "description": "Abbreviated name of the team submitting the model",
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9_+]+$",
+                        "maxLength": 16
+                    },
+                    "model_abbr": {
+                        "description": "Abbreviated name of the model",
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9_+]+$",
+                        "maxLength": 16
+                    },
+                    "model_type": {
+                        "description": "The type of model: baseline or ensemble",
+                        "type": "string",
+                        "enum": [
+                            "baseline",
+                            "ensemble"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "hub_repository_host",
+        "hub_repository_name",
+        "hub_repository_org"
+    ]
+}
