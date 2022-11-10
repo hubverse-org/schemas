@@ -4,22 +4,40 @@
     "description": "This JSON file provides a schema for modeling hub administrative information.",
     "type": "object",
     "properties": {
-        "hub_repository_host": {
+        "name": {
+            "description": "The name of the hub.",
+            "type": "string",
+            "example": "US COVID-19 Forecast Hub​"
+        },
+        "maintainer": {
+            "description": "The entity that maintains and runs the hub.",
+            "type": "string",
+            "example": "The Consortium of Infectious Disease Modeling Hubs"
+        },
+        "contact": {
+            "description": "The name and email of a human being who serves as a point of contact for the hub.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                }
+            }
+        },
+        "repository_host": {
             "description": "The name of the web host for the hub repository",
             "type": "string",
             "enum": [
                 "github"
             ]
         },
-        "hub_repository_org": {
-            "description": "The organization coordinating the hub",
+        "repository_url": {
+            "description": "The url for the hub repository.",
             "type": "string",
-            "example": "Infectious-Disease-Modeling-Hubs"
-        },
-        "hub_repository_name": {
-            "description": "The name of the hub repository",
-            "type": "string",
-            "example": "covid19-forecast-hub​​"
+            "example": "https://github.com/reichlab/covid19-forecast-hub"
         },
         "zoltar_project_id": {
             "description": "The project id of the Hub in Zoltar",
@@ -54,11 +72,17 @@
                     }
                 }
             }
+        },
+        "citation": {
+            "description": "One or more citations for the hub.",
+            "type": "string",
+            "example": "Cramer, E.Y., Huang, Y., Wang, Y. et al. The United States COVID-19 Forecast Hub dataset. Sci Data 9, 462 (2022). https://doi.org/10.1038/s41597-022-01517-w"
         }
     },
     "required": [
-        "hub_repository_host",
-        "hub_repository_name",
-        "hub_repository_org"
+        "name",
+        "maintainer",
+        "contact",
+        "repository_url"
     ]
 }
