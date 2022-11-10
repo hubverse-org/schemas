@@ -51,7 +51,7 @@
                 "type": "object",
                 "properties": {
                     "team_abbr": {
-                        "description": "Abbreviated name of the team submitting the model",
+                        "description": "Abbreviated team name of the hub",
                         "type": "string",
                         "pattern": "^[a-zA-Z0-9_+]+$",
                         "maxLength": 16
