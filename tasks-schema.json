@@ -519,137 +519,209 @@
                               "items": {
                                 "type": "string"
                               }
+                            },
+                            "optional": {
+                              "description": "Array of valid but not required unique categories. Can be null if all categories are required and are specified in the required property.",
+                              "type": ["array", "null"],
+                              "items": {
+                                "type": "string"
+                              }
                             }
                           },
-                          "optional": {
-                            "description": "Array of valid but not required unique categories. Can be null if all categories are required and are specified in the required property.",
-                            "type": ["array", "null"],
-                            "items": {
-                              "type": "string"
-                            }
-                          }
+                          "required": [
+                            "required",
+                            "optional"
+                          ]
                         },
-                        "required": [
-                          "required",
-                          "optional"
-                        ]
+                        "value": {
+                          "type": "object",
+                          "description": "Object defining valid values of the probability mass function of the predictive distribution for a given level of a categorical outcome variable.",
+                          "example": [0.4, 0.6],
+                          "properties": {
+                            "type": {
+                              "description": "Data type of the probability mass function values.",
+                              "example": "double",
+                              "enum": [
+                                "numeric", "integer", "double"
+                              ]
+                            },
+                            "minimum": {
+                              "description": "The minimum inclusive valid probability mass function value",
+                              "example": 0,
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "maximum": {
+                              "description": "The maximum inclusive valid probability mass function value",
+                              "example": 1,
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "minimum",
+                            "maximum"
+                          ]
+                        }
                       },
-                      "value": {
-                        "type": "object",
-                        "description": "Object defining valid values of the probability mass function of the predictive distribution for a given level of a categorical outcome variable.",
-                        "properties": {
-                          "type": {
-                            "description": "Data type of the probability mass function values.",
-                            "example": "double",
-                            "enum": [
-                              "numeric", "integer", "double"
-                            ]
-                          },
-                          "minimum": {
-                            "description": "The minimum inclusive valid probability mass function value",
-                            "example": 0,
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 1
-                          },
-                          "maximum": {
-                            "description": "The maximum inclusive valid probability mass function value",
-                            "example": 1,
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 1
-                          }
-                        },
-                        "required": [
-                          "type",
-                          "minimum",
-                          "maximum"
-                        ]
-                      }
+                      "required": [
+                        "type_id",
+                        "value"
+                      ]
                     },
-                    "required": [
-                      "type_id",
-                      "value"
-                    ]
+                    "sample": {
+                      "description": "Object defining a sample output type.",
+                      "type": "object",
+                      "properties": {
+                        "type_id": {
+                          "description": "Object containing required and optional arrays specifying valid sample values.",
+                          "example": [
+                            [1, 2, 3, 4]
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "required": {
+                              "description": "Array of unique sample indexes that must be present for submission to be valid. Can be null if no sample indexes are required and all valid sample indexes are specified in the optional property.",
+                              "type": ["array", "null"],
+                              "items": {
+                                "type": "integer",
+                                "minimum": 1
+                              }
+                            },
+                            "optional": {
+                              "description": "Array of valid but not required unique sample indexes. Can be null if all sample indexes are required and are specified in the required property.",
+                              "type": ["array", "null"],
+                              "items": {
+                                "type": "integer",
+                                "minimum": 1
+                              }
+                            }
+                          },
+                          "required": [
+                            "required",
+                            "optional"
+                          ]
+                        },
+                        "value": {
+                          "type": "object",
+                          "description": "Object defining valid values of samples from the predictive distribution for a given sample index.  Depending on the Hub specification, samples with the same sample index (specified by the type_id) may be assumed to correspond to a joint distribution across multiple levels of the task id variables. See Hub documentation for details.",
+                          "properties": {
+                            "type": {
+                              "description": "Data type of sample value from the predictive distribution.",
+                              "example": "double",
+                              "enum": [
+                                "numeric", "integer", "double"
+                              ]
+                            },
+                            "minimum": {
+                              "description": "The minimum inclusive valid sample value from the predictive distribution",
+                              "example": 0,
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "maximum": {
+                              "description": "The maximum inclusive valid sample value from the predictive distribution",
+                              "example": 1,
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "minimum",
+                            "maximum"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type_id",
+                        "value"
+                      ]
+                    }
                   }
                 }
-              }
+              },
+              "required": [
+                "task_ids",
+                "output_types"
+              ]
+            },
+            "submissions_due": {
+              "description": "Object defining the dates by which model forecasts must be submitted to the hub.",
+              "example": [{
+                  "start": "2022-06-07",
+                  "end": "2022-07-20"
+                },
+                {
+                  "relative_to": "origin_date",
+                  "start": -4,
+                  "end": 2
+                }
+              ],
+              "type": "object",
+              "oneOf": [{
+                  "properties": {
+                    "relative_to": {
+                      "description": "Name of task id variable in relation to which submission start and end dates are calculated",
+                      "type": "string"
+                    },
+                    "start": {
+                      "description": "Difference in days between start and origin date",
+                      "type": "integer"
+                    },
+                    "end": {
+                      "description": "Difference in days between end and origin date",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "relative_to",
+                    "start",
+                    "end"
+                  ]
+                },
+                {
+                  "properties": {
+                    "start": {
+                      "description": "Submission start date.",
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "end": {
+                      "description": "Submission start date.",
+                      "type": "string",
+                      "format": "date"
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "end"
+                  ]
+                }
+              ],
+              "required": [
+                "start",
+                "end"
+              ]
+            },
+            "last_data_date": {
+              "description": "The last date with recorded data in the data set used as input to a mode",
+              "example": "2022-07-18",
+              "type": "string",
+              "format": "date"
             },
             "required": [
-              "task_ids",
-              "output_types"
+              "round_id_from_variable",
+              "round_id",
+              "model_tasks",
+              "submissions_due"
             ]
-          },
-          "submissions_due": {
-            "description": "Object defining the dates by which model forecasts must be submitted to the hub.",
-            "example": [{
-                "start": "2022-06-07",
-                "end": "2022-07-20"
-              },
-              {
-                "relative_to": "origin_date",
-                "start": -4,
-                "end": 2
-              }
-            ],
-            "type": "object",
-            "oneOf": [{
-                "properties": {
-                  "relative_to": {
-                    "description": "Name of task id variable in relation to which submission start and end dates are calculated",
-                    "type": "string"
-                  },
-                  "start": {
-                    "description": "Difference in days between start and origin date",
-                    "type": "integer"
-                  },
-                  "end": {
-                    "description": "Difference in days between end and origin date",
-                    "type": "integer"
-                  }
-                },
-                "required": [
-                  "relative_to",
-                  "start",
-                  "end"
-                ]
-              },
-              {
-                "properties": {
-                  "start": {
-                    "description": "Submission start date.",
-                    "type": "string",
-                    "format": "date"
-                  },
-                  "end": {
-                    "description": "Submission start date.",
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
-                "required": [
-                  "start",
-                  "end"
-                ]
-              }
-            ],
-            "required": [
-              "start",
-              "end"
-            ]
-          },
-          "last_data_date": {
-            "description": "The last date with recorded data in the data set used as input to a mode",
-            "example": "2022-07-18",
-            "type": "string",
-            "format": "date"
-          },
-          "required": [
-            "round_id_from_variable",
-            "round_id",
-            "model_tasks",
-            "submissions_due"
-          ]
+          }
         }
       }
     },
