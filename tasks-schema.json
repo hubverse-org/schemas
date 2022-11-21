@@ -710,7 +710,7 @@
               ]
             },
             "last_data_date": {
-              "description": "The last date with recorded data in the data set used as input to a mode",
+              "description": "The last date with recorded data in the data set used as input to a model.",
               "example": "2022-07-18",
               "type": "string",
               "format": "date"
