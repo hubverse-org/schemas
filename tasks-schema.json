@@ -675,7 +675,7 @@
                       "type": "integer"
                     },
                     "end": {
-                      "description": "Difference in days between end and origin date",
+                      "description": "Difference in days between end and origin date.",
                       "type": "integer"
                     }
                   },
