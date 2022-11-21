@@ -476,7 +476,7 @@
                               ]
                             },
                             "minimum": {
-                              "description": "The minimum inclusive valid cumulative distribution function value",
+                              "description": "The minimum inclusive valid cumulative distribution function value.",
                               "example": 0,
                               "type": "number",
                               "minimum": 0,
