@@ -667,7 +667,7 @@
               "oneOf": [{
                   "properties": {
                     "relative_to": {
-                      "description": "Name of task id variable in relation to which submission start and end dates are calculated",
+                      "description": "Name of task id variable in relation to which submission start and end dates are calculated.",
                       "type": "string"
                     },
                     "start": {
