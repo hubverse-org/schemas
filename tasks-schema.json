@@ -483,7 +483,7 @@
                               "maximum": 1
                             },
                             "maximum": {
-                              "description": "The maximum inclusive valid cumulative distribution function value",
+                              "description": "The maximum inclusive valid cumulative distribution function value.",
                               "example": 1,
                               "type": "number",
                               "minimum": 0,
