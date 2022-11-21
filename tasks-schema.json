@@ -398,7 +398,7 @@
                               "type": "number"
                             },
                             "maximum": {
-                              "description": "The maximum inclusive valid quantile value",
+                              "description": "The maximum inclusive valid quantile value (optional).",
                               "type": "number"
                             }
                           },
