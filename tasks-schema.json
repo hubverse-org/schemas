@@ -671,7 +671,7 @@
                       "type": "string"
                     },
                     "start": {
-                      "description": "Difference in days between start and origin date",
+                      "description": "Difference in days between start and origin date.",
                       "type": "integer"
                     },
                     "end": {
