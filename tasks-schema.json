@@ -417,7 +417,7 @@
                       "type": "object",
                       "properties": {
                         "type_id": {
-                          "description": "Object containing required and optional arrays defining possible values of the target variable at which values of the cumulative distribution function of the predictive distribution will be recorded. Values are therefore target dependent.",
+                          "description": "Object containing required and optional arrays defining possible values of the target variable at which values of the cumulative distribution function of the predictive distribution will be recorded.",
                           "example": [
                             [10.0, 20.0],
                             ["EW202240", "EW202241", "EW202242", "EW202243", "EW202244", "EW202245", "EW202246", "EW202247"]
