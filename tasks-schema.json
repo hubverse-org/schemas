@@ -682,71 +682,71 @@
                 "task_ids",
                 "output_types"
               ]
-            },
-            "submissions_due": {
-              "description": "Object defining the dates by which model forecasts must be submitted to the hub.",
-              "example": [{
-                  "start": "2022-06-07",
-                  "end": "2022-07-20"
-                },
-                {
-                  "relative_to": "origin_date",
-                  "start": -4,
-                  "end": 2
-                }
-              ],
-              "type": "object",
-              "oneOf": [{
-                  "properties": {
-                    "relative_to": {
-                      "description": "Name of task id variable in relation to which submission start and end dates are calculated.",
-                      "type": "string"
-                    },
-                    "start": {
-                      "description": "Difference in days between start and origin date.",
-                      "type": "integer"
-                    },
-                    "end": {
-                      "description": "Difference in days between end and origin date.",
-                      "type": "integer"
-                    }
-                  },
-                  "required": [
-                    "relative_to",
-                    "start",
-                    "end"
-                  ]
-                },
-                {
-                  "properties": {
-                    "start": {
-                      "description": "Submission start date.",
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "end": {
-                      "description": "Submission end date.",
-                      "type": "string",
-                      "format": "date"
-                    }
-                  },
-                  "required": [
-                    "start",
-                    "end"
-                  ]
-                }
-              ],
-              "required": [
-                "start",
-                "end"
-              ]
-            },
-            "last_data_date": {
-              "description": "The last date with recorded data in the data set used as input to a model.",
-              "example": "2022-07-18",
-              "type": "string",
-              "format": "date"
             }
+          },
+          "submissions_due": {
+            "description": "Object defining the dates by which model forecasts must be submitted to the hub.",
+            "example": [{
+                "start": "2022-06-07",
+                "end": "2022-07-20"
+              },
+              {
+                "relative_to": "origin_date",
+                "start": -4,
+                "end": 2
+              }
+            ],
+            "type": "object",
+            "oneOf": [{
+                "properties": {
+                  "relative_to": {
+                    "description": "Name of task id variable in relation to which submission start and end dates are calculated.",
+                    "type": "string"
+                  },
+                  "start": {
+                    "description": "Difference in days between start and origin date.",
+                    "type": "integer"
+                  },
+                  "end": {
+                    "description": "Difference in days between end and origin date.",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "relative_to",
+                  "start",
+                  "end"
+                ]
+              },
+              {
+                "properties": {
+                  "start": {
+                    "description": "Submission start date.",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "description": "Submission end date.",
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ]
+              }
+            ],
+            "required": [
+              "start",
+              "end"
+            ]
+          },
+          "last_data_date": {
+            "description": "The last date with recorded data in the data set used as input to a model.",
+            "example": "2022-07-18",
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
