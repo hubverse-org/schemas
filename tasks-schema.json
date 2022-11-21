@@ -542,7 +542,7 @@
                               "description": "Data type of the probability mass function values.",
                               "example": "double",
                               "enum": [
-                                "numeric", "integer", "double"
+                                "numeric", "double"
                               ]
                             },
                             "minimum": {
