@@ -691,7 +691,7 @@
                       "format": "date"
                     },
                     "end": {
-                      "description": "Submission start date.",
+                      "description": "Submission end date.",
                       "type": "string",
                       "format": "date"
                     }
