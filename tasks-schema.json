@@ -226,7 +226,7 @@
                     "age_group": {
                       "type": "object",
                       "description": "An object containing arrays of required and optional unique identifiers for age groups",
-                      "example": ["0-5", "6-18", "19-24", "25-64", "65+"],
+                      "example": {"required": ["0-5", "6-18", "19-24", "25-64", "65+"], "optional": null}
                       "properties": {
                         "required": {
                           "description": "Array of age group unique identifiers that must be present for submission to be valid. Can be null if no age groups are required and all valid age groups are specified in the optional property.",
