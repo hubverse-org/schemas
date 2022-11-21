@@ -393,7 +393,7 @@
                               "enum": ["numeric", "double", "integer"]
                             },
                             "minimum": {
-                              "description": "The minimum inclusive valid quantile value",
+                              "description": "The minimum inclusive valid quantile value (optional).",
                               "example": 0,
                               "type": "number"
                             },
