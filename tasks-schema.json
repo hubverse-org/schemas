@@ -31,7 +31,7 @@
               "type": "object",
               "properties": {
                 "task_ids": {
-                  "description": "Group of valid values of task id variables. All combinations of these values yield the complete set of valid tasks for a given modeling task.",
+                  "description": "Group of valid values of task id variables. A set of valid tasks corresponding to this group is formed by taking all combinations of these values.",
                   "type": "object",
                   "properties": {
                     "origin_date": {
