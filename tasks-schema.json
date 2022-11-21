@@ -442,7 +442,7 @@
                               }
                             },
                             "optional": {
-                              "description": "Array of valid but not required unique target values. Can be null if all ptarget values are required and are specified in the required property.",
+                              "description": "Array of valid but not required unique target values. Can be null if all target values are required and are specified in the required property.",
                               "type": ["array", "null"],
                               "items": {
                                 "oneOf": [{
