@@ -308,7 +308,7 @@
                               "description": "Data type of mean values.",
                               "example": ["numeric"],
                               "type": "string",
-                              "enum": ["numeric", "double", "integer"]
+                              "enum": ["numeric", "double"]
                             },
                             "minimum": {
                               "description": "The minimum inclusive valid mean value",
@@ -351,7 +351,7 @@
                               "description": "Data type of median values",
                               "example": "numeric",
                               "type": "string",
-                              "enum": ["numeric", "double", "integer"]
+                              "enum": ["numeric", "double"]
                             },
                             "minimum": {
                               "description": "The minimum inclusive valid median value",
@@ -415,9 +415,9 @@
                           "properties": {
                             "type": {
                               "description": "Data type of quantile values.",
-                              "example": "integer",
+                              "example": "numeric",
                               "type": "string",
-                              "enum": ["numeric", "double", "integer"]
+                              "enum": ["numeric", "double"]
                             },
                             "minimum": {
                               "description": "The minimum inclusive valid quantile value (optional).",
@@ -504,7 +504,7 @@
                               "description": "Data type of cumulative distribution function values.",
                               "example": "double",
                               "enum": [
-                                "numeric", "integer", "double"
+                                "numeric", "double"
                               ]
                             },
                             "minimum": {
@@ -647,7 +647,7 @@
                               "description": "Data type of sample value from the predictive distribution.",
                               "example": "double",
                               "enum": [
-                                "numeric", "integer", "double"
+                                "numeric", "double"
                               ]
                             },
                             "minimum": {
