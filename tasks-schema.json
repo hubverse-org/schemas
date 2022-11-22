@@ -508,11 +508,11 @@
                               ]
                             },
                             "minimum": {
-                              "description": "The minimum inclusive valid cumulative distribution function value.",
+                              "description": "The minimum inclusive valid cumulative distribution function value. Must be 0.",
                               "const": 0
                             },
                             "maximum": {
-                              "description": "The maximum inclusive valid cumulative distribution function value.",
+                              "description": "The maximum inclusive valid cumulative distribution function value. Must be 1.",
                               "const": 1
                             }
                           },
@@ -573,11 +573,11 @@
                               ]
                             },
                             "minimum": {
-                              "description": "The minimum inclusive valid probability mass function value",
+                              "description": "The minimum inclusive valid probability mass function value. Must be 0.",
                               "const": 0
                             },
                             "maximum": {
-                              "description": "The maximum inclusive valid probability mass function value",
+                              "description": "The maximum inclusive valid probability mass function value. Must be 1.",
                               "const": 1
                             }
                           },
