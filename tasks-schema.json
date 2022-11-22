@@ -600,8 +600,8 @@
                         "type_id": {
                           "description": "Object containing required and optional arrays specifying valid sample values.",
                           "example": [{
-                            "required": null,
-                            "optional": [1, 2, 3, 4]
+                            "required": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                            "optional": [11, 12, 13, 14, 15]
                           }],
                           "type": "object",
                           "properties": {
@@ -635,22 +635,18 @@
                               "description": "Data type of sample value from the predictive distribution.",
                               "example": "double",
                               "enum": [
-                                "numeric", "double"
+                                "numeric", "double", "integer"
                               ]
                             },
                             "minimum": {
-                              "description": "The minimum inclusive valid sample value from the predictive distribution",
-                              "const": 0
+                              "description": "The minimum inclusive valid sample value from the predictive distribution"
                             },
                             "maximum": {
-                              "description": "The maximum inclusive valid sample value from the predictive distribution",
-                              "const": 1
+                              "description": "The maximum inclusive valid sample value from the predictive distribution"
                             }
                           },
                           "required": [
-                            "type",
-                            "minimum",
-                            "maximum"
+                            "type"
                           ]
                         }
                       },
