@@ -283,7 +283,7 @@
                   },
                   "additionalProperties": true
                 },
-                "output_types": {
+                "output_type": {
                   "type": "object",
                   "description": "Object defining valid model output types for a given modeling task. The name of each property corresponds to valid values in column 'type' while the 'type_id' property of each output type defines the valid values of the 'type_id' column and the 'value' property defines the valid values of the 'value' column for a given output type.",
                   "properties": {
