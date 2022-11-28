@@ -304,6 +304,7 @@
                           "oneOf": [{
                             "properties": {
                               "required": {
+                                "description": "When mean is required, property set to single element 'NA' array",
                                 "type": "array",
                                 "items": {
                                   "const": "NA",
@@ -311,15 +312,18 @@
                                 }
                               },
                               "optional": {
+                                "description": "When mean is required, property set to null",
                                 "type": null
                               }
                             }
                           }, {
                             "properties": {
                               "required": {
+                                "description": "When mean is optional, property set to null",
                                 "type": null
                               },
                               "optional": {
+                                "description": "When mean is optional, property set to single element 'NA' array",
                                 "type": "array",
                                 "items": {
                                   "const": "NA",
@@ -377,33 +381,37 @@
                             "optional": ["NA"]
                           }],
                           "type": "object",
-                          "properties": {
-                            "oneOf": [{
-                                "required": {
-                                  "type": "array",
-                                  "items": {
-                                    "const": "NA",
-                                    "maxItems": 1
-                                  }
-                                },
-                                "optional": {
-                                  "type": null
+                          "oneOf": [{
+                            "properties": {
+                              "required": {
+                                "description": "When median is required, property set to single element 'NA' array",
+                                "type": "array",
+                                "items": {
+                                  "const": "NA",
+                                  "maxItems": 1
                                 }
                               },
-                              {
-                                "required": {
-                                  "type": null
-                                },
-                                "optional": {
-                                  "type": "array",
-                                  "items": {
-                                    "const": "NA",
-                                    "maxItems": 1
-                                  }
+                              "optional": {
+                                "description": "When median is required, property set to null",
+                                "type": null
+                              }
+                            }
+                          }, {
+                            "properties": {
+                              "required": {
+                                "description": "When median is optional, property set to null",
+                                "type": null
+                              },
+                              "optional": {
+                                "description": "When median is optional, property set to single element 'NA' array",
+                                "type": "array",
+                                "items": {
+                                  "const": "NA",
+                                  "maxItems": 1
                                 }
                               }
-                            ]
-                          },
+                            }
+                          }],
                           "required": [
                             "required",
                             "optional"
