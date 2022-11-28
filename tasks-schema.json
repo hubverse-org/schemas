@@ -301,33 +301,33 @@
                             "optional": ["NA"]
                           }],
                           "type": "object",
-                          "properties": {
-                            "oneOf": [{
-                                "required": {
-                                  "type": "array",
-                                  "items": {
-                                    "const": "NA",
-                                    "maxItems": 1
-                                  }
-                                },
-                                "optional": {
-                                  "type": null
+                          "oneOf": [{
+                            "properties": {
+                              "required": {
+                                "type": "array",
+                                "items": {
+                                  "const": "NA",
+                                  "maxItems": 1
                                 }
                               },
-                              {
-                                "required": {
-                                  "type": null
-                                },
-                                "optional": {
-                                  "type": "array",
-                                  "items": {
-                                    "const": "NA",
-                                    "maxItems": 1
-                                  }
+                              "optional": {
+                                "type": null
+                              }
+                            }
+                          }, {
+                            "properties": {
+                              "required": {
+                                "type": null
+                              },
+                              "optional": {
+                                "type": "array",
+                                "items": {
+                                  "const": "NA",
+                                  "maxItems": 1
                                 }
                               }
-                            ]
-                          },
+                            }
+                          }],
                           "required": [
                             "required",
                             "optional"
