@@ -292,13 +292,50 @@
                       "description": "Object defining the mean of the predictive distribution output type.",
                       "properties": {
                         "type_id": {
-                          "description": "Not used for mean output type. Must be an array containing the single element 'NA'.",
-                          "default": ["NA"],
-                          "type": "array",
-                          "items": {
-                            "enum": ["NA"],
-                            "maxItems": 1
-                          }
+                          "description": "type_id is not meaningful for a mean output_type. The property is primarily used to determine whether mean is a required or optional output type through properties required and optional. If mean is a required output type, the required property must be an array containing the single string element 'NA' and the optional property must be set to null. If mean is an optional output type, the optional property must be an array containing the single string element 'NA' and the required property must be set to null",
+                          "example": [{
+                            "required": ["NA"],
+                            "optional": null
+                          }, {
+                            "required": null,
+                            "optional": ["NA"]
+                          }],
+                          "type": "object",
+                          "oneOf": [{
+                            "properties": {
+                              "required": {
+                                "description": "When mean is required, property set to single element 'NA' array",
+                                "type": "array",
+                                "items": {
+                                  "const": "NA",
+                                  "maxItems": 1
+                                }
+                              },
+                              "optional": {
+                                "description": "When mean is required, property set to null",
+                                "type": null
+                              }
+                            }
+                          }, {
+                            "properties": {
+                              "required": {
+                                "description": "When mean is optional, property set to null",
+                                "type": null
+                              },
+                              "optional": {
+                                "description": "When mean is optional, property set to single element 'NA' array",
+                                "type": "array",
+                                "items": {
+                                  "const": "NA",
+                                  "maxItems": 1
+                                }
+                              }
+                            }
+                          }],
+                          "required": [
+                            "required",
+                            "optional"
+                          ]
                         },
                         "value": {
                           "type": "object",
@@ -335,13 +372,50 @@
                       "description": "Object defining the median of the predictive distribution output type",
                       "properties": {
                         "type_id": {
-                          "description": "Not used for median output type. Must be an array containing the single element 'NA'",
-                          "default": ["NA"],
-                          "type": "array",
-                          "items": {
-                            "enum": ["NA"],
-                            "maxItems": 1
-                          }
+                          "description": "type_id is not meaningful for a median output_type. The property is primarily used to determine whether median is a required or optional output type through properties required and optional. If median is a required output type, the required property must be an array containing the single string element 'NA' and the optional property must be set to null. If median is an optional output type, the optional property must be an array containing the single string element 'NA' and the required property must be set to null",
+                          "example": [{
+                            "required": ["NA"],
+                            "optional": null
+                          }, {
+                            "required": null,
+                            "optional": ["NA"]
+                          }],
+                          "type": "object",
+                          "oneOf": [{
+                            "properties": {
+                              "required": {
+                                "description": "When median is required, property set to single element 'NA' array",
+                                "type": "array",
+                                "items": {
+                                  "const": "NA",
+                                  "maxItems": 1
+                                }
+                              },
+                              "optional": {
+                                "description": "When median is required, property set to null",
+                                "type": null
+                              }
+                            }
+                          }, {
+                            "properties": {
+                              "required": {
+                                "description": "When median is optional, property set to null",
+                                "type": null
+                              },
+                              "optional": {
+                                "description": "When median is optional, property set to single element 'NA' array",
+                                "type": "array",
+                                "items": {
+                                  "const": "NA",
+                                  "maxItems": 1
+                                }
+                              }
+                            }
+                          }],
+                          "required": [
+                            "required",
+                            "optional"
+                          ]
                         },
                         "value": {
                           "type": "object",
