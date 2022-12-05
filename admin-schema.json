@@ -87,6 +87,15 @@
             ],
             "type": "string",
             "pattern": "UTC[+-][0-9]{1,4}"
+        },
+        "model_output_dir": {
+            "description": "Relative path, with respect to the root of hub, to directory containing model output data. If property not supplied, the default path `model_output/` assumed",
+            "default": "model_output",
+            "example": [
+                "forecasts",
+                "data/model_output"
+            ],
+            "type": "string"
         }
     },
     "required": [
