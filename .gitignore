@@ -1,2 +1,5 @@
 *.code-workspace
 *.DS_Store
+.Rproj.user
+*.Rproj
+attic/*
