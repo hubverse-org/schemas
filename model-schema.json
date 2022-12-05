@@ -1,6 +1,6 @@
 {
   "title": "ForecastHub model metadata",
-  "description": "This is the schema of the model metadata file, please refer to https://github.com/epiforecasts/covid19-forecast-hub-europe/wiki/Metadata[an] for more information.\n",
+  "description": "This is the schema of the model metadata file, please refer to https://github.com/epiforecasts/covid19-forecast-hub-europe/wiki/Metadata[an] for more information.",
   "type": "object",
   "properties": {
     "team_name": {
@@ -78,15 +78,15 @@
       ]
     },
     "include_viz": {
-      "description": "Indicator for whether the model should be included in the Hub’s visualization\n",
+      "description": "Indicator for whether the model should be included in the Hub’s visualization",
       "type": "boolean"
     },
     "include_ensemble": {
-      "description": "Indicator for whether the model should be included in the Hub’s ensemble\n",
+      "description": "Indicator for whether the model should be included in the Hub’s ensemble",
       "type": "boolean"
     },
     "include_eval": {
-      "description": "Indicator for whether the model should be scored for inclusion in the Hub’s evaluations\n",
+      "description": "Indicator for whether the model should be scored for inclusion in the Hub’s evaluations",
       "type": "boolean"
     },
     "citation": {
