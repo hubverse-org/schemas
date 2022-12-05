@@ -77,6 +77,16 @@
             "description": "One or more citations for the hub.",
             "type": "string",
             "example": "Cramer, E.Y., Huang, Y., Wang, Y. et al. The United States COVID-19 Forecast Hub dataset. Sci Data 9, 462 (2022). https://doi.org/10.1038/s41597-022-01517-w"
+        },
+        "timezone": {
+            "description": "Hub timezone in UTC format. Used for determining exact time of submission deadlines.",
+            "examples": [
+                "UTC+1",
+                "UTC-03",
+                "UTC+0530"
+            ],
+            "type": "string",
+            "pattern": "UTC[+-][0-9]{1,4}"
         }
     },
     "required": [
