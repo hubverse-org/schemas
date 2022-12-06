@@ -422,16 +422,18 @@
                         "value": {
                           "type": "object",
                           "description": "Object defining the characteristics of valid median values",
+                          "examples": [{
+                            "type": "numeric",
+                            "minimum": 0
+                          }],
                           "properties": {
                             "type": {
                               "description": "Data type of median values",
-                              "examples": "numeric",
                               "type": "string",
                               "enum": ["numeric", "double"]
                             },
                             "minimum": {
                               "description": "The minimum inclusive valid median value",
-                              "examples": 0,
                               "type": "integer"
                             },
                             "maximum": {
