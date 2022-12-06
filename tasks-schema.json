@@ -313,14 +313,14 @@
                               },
                               "optional": {
                                 "description": "When mean is required, property set to null",
-                                "type": null
+                                "type": "null"
                               }
                             }
                           }, {
                             "properties": {
                               "required": {
                                 "description": "When mean is optional, property set to null",
-                                "type": null
+                                "type": "null"
                               },
                               "optional": {
                                 "description": "When mean is optional, property set to single element 'NA' array",
@@ -340,16 +340,18 @@
                         "value": {
                           "type": "object",
                           "description": "Object defining the characteristics of valid mean values.",
+                          "examples": [{
+                            "type": "numeric",
+                            "minimum": 0
+                          }],
                           "properties": {
                             "type": {
                               "description": "Data type of mean values.",
-                              "examples": ["numeric"],
                               "type": "string",
                               "enum": ["numeric", "double"]
                             },
                             "minimum": {
                               "description": "The minimum inclusive valid mean value",
-                              "examples": 0,
                               "type": "integer"
                             },
                             "maximum": {
@@ -393,14 +395,14 @@
                               },
                               "optional": {
                                 "description": "When median is required, property set to null",
-                                "type": null
+                                "type": "null"
                               }
                             }
                           }, {
                             "properties": {
                               "required": {
                                 "description": "When median is optional, property set to null",
-                                "type": null
+                                "type": "null"
                               },
                               "optional": {
                                 "description": "When median is optional, property set to single element 'NA' array",
