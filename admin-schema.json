@@ -102,6 +102,7 @@
         "name",
         "maintainer",
         "contact",
-        "repository_url"
+        "repository_url",
+        "timezone"
     ]
 }
