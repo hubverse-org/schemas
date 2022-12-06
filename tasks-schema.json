@@ -489,13 +489,13 @@
                           "properties": {
                             "type": {
                               "description": "Data type of quantile values.",
-                              "examples": "numeric",
+                              "examples": ["numeric"],
                               "type": "string",
                               "enum": ["numeric", "double"]
                             },
                             "minimum": {
                               "description": "The minimum inclusive valid quantile value (optional).",
-                              "examples": 0,
+                              "examples": [0],
                               "type": "number"
                             },
                             "maximum": {
@@ -576,7 +576,7 @@
                           "properties": {
                             "type": {
                               "description": "Data type of cumulative distribution function values.",
-                              "examples": "double",
+                              "examples": ["double"],
                               "enum": [
                                 "numeric", "double"
                               ]
@@ -637,11 +637,14 @@
                         "value": {
                           "type": "object",
                           "description": "Object defining valid values of the probability mass function of the predictive distribution for a given level of a categorical outcome variable.",
-                          "examples": [0.1, 0.3, 0.5, 0.1],
+                          "examples": [{
+                            "type": "double",
+                            "minimum": 0,
+                            "maximum": 1
+                          }],
                           "properties": {
                             "type": {
                               "description": "Data type of the probability mass function values.",
-                              "examples": "double",
                               "enum": [
                                 "numeric", "double"
                               ]
@@ -707,7 +710,9 @@
                           "properties": {
                             "type": {
                               "description": "Data type of sample value from the predictive distribution.",
-                              "examples": "double",
+                              "examples": [{
+                                "type": "double"
+                              }],
                               "enum": [
                                 "numeric", "double", "integer"
                               ]
@@ -798,7 +803,7 @@
           },
           "last_data_date": {
             "description": "The last date with recorded data in the data set used as input to a model.",
-            "examples": "2022-07-18",
+            "examples": ["2022-07-18"],
             "type": "string",
             "format": "date"
           }
