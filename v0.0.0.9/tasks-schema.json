@@ -743,7 +743,7 @@
               },
               "required": [
                 "task_ids",
-                "output_types"
+                "output_type"
               ]
             }
           },
