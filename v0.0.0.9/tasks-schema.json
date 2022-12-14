@@ -352,7 +352,7 @@
                             "type": {
                               "description": "Data type of mean values.",
                               "type": "string",
-                              "enum": ["numeric", "double"]
+                              "enum": ["numeric", "double", "integer"]
                             },
                             "minimum": {
                               "description": "The minimum inclusive valid mean value",
@@ -434,7 +434,7 @@
                             "type": {
                               "description": "Data type of median values",
                               "type": "string",
-                              "enum": ["numeric", "double"]
+                              "enum": ["numeric", "double", "integer"]
                             },
                             "minimum": {
                               "description": "The minimum inclusive valid median value",
@@ -499,7 +499,7 @@
                               "description": "Data type of quantile values.",
                               "examples": ["numeric"],
                               "type": "string",
-                              "enum": ["numeric", "double"]
+                              "enum": ["numeric", "double", "integer"]
                             },
                             "minimum": {
                               "description": "The minimum inclusive valid quantile value (optional).",
