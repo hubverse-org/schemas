@@ -5,6 +5,10 @@
   "description": "This is the schema of the model metadata file, please refer to https://github.com/epiforecasts/covid19-forecast-hub-europe/wiki/Metadata[an] for more information.",
   "type": "object",
   "properties": {
+        "schema_version": {
+            "type": "string",
+            "format": "uri"
+        },
     "team_name": {
       "description": "The name of the team submitting the model",
       "type": "string"
@@ -172,6 +176,7 @@
   },
   "additionalProperties": false,
   "required": [
+    "schema_version",
     "team_name",
     "team_abbr",
     "model_name",
