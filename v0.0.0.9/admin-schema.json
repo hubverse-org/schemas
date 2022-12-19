@@ -5,6 +5,10 @@
     "description": "This JSON file provides a schema for modeling hub administrative information.",
     "type": "object",
     "properties": {
+        "schema_version": {
+            "type": "string",
+            "format": "uri"
+        },
         "name": {
             "description": "The name of the hub.",
             "type": "string",
@@ -619,6 +623,7 @@
         }
     },
     "required": [
+        "schema_version",
         "name",
         "maintainer",
         "contact",
