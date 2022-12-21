@@ -948,8 +948,7 @@
           "submissions_due"
         ]
       }
-    },
-    "$defs": {}
+    }
   },
   "required": [
     "rounds",
