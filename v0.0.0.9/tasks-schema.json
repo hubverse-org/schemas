@@ -853,27 +853,26 @@
                     "target_id",
                     "target_name",
                     "target_units",
-                    "target_type"
-
-                  ]
+                    "target_type",
+                    "target_keys",
+                    "is_step_ahead"
+                  ],
+                  "if": {
+                    "properties": {
+                      "is_step_ahead": {
+                        "const": true
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["time_unit"]
+                  }
                 },
                 "required": [
                   "task_ids",
                   "output_type",
-                  "target_metadata",
-                  "target_keys",
-                  "is_step_ahead"
-                ],
-                "if": {
-                  "properties": {
-                    "is_step_ahead": {
-                      "const": true
-                    }
-                  }
-                },
-                "then": {
-                  "required": ["time_unit"]
-                }
+                  "target_metadata"
+                ]
               }
             }
           },
