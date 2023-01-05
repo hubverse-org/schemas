@@ -104,6 +104,7 @@
       "type": "string"
     },
     "model_details": {
+      "description": "Structured information about the model",
       "type": "object",
       "properties": {
         "data_inputs": {
