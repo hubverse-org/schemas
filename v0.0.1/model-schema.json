@@ -112,6 +112,7 @@
           "type": "string"
         },
         "methods": {
+          "description": "A brief (200 char.) description of the methods used by this model",
           "type": "string",
           "maxLength": 200
         },
