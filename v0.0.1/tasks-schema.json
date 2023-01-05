@@ -867,13 +867,13 @@
                   "then": {
                     "required": ["time_unit"]
                   }
-                },
-                "required": [
-                  "task_ids",
-                  "output_type",
-                  "target_metadata"
-                ]
-              }
+                }
+              },
+              "required": [
+                "task_ids",
+                "output_type",
+                "target_metadata"
+              ]
             }
           },
           "submissions_due": {
