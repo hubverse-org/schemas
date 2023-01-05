@@ -96,7 +96,9 @@
       "type": "boolean"
     },
     "citation": {
-      "type": "string"
+      "description": "One or more citations for this model",
+      "type": "string",
+      "examples": "Gibson GC , Reich NG , Sheldon D. Real-time mechanistic bayesian forecasts of Covid-19 mortality. medRxiv. 2020. https://doi.org/10.1101/2020.12.22.20248736"
     },
     "team_funding": {
       "type": "string"
