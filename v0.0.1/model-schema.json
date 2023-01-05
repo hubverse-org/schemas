@@ -182,7 +182,6 @@
     "model_name",
     "model_abbr",
     "model_contributors",
-    "website_url",
     "license",
     "include_viz",
     "include_ensemble",
