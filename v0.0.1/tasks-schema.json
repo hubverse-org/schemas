@@ -778,7 +778,11 @@
                     "target_keys": {
                       "description": "Object that either is null or has 1 or more properties, the names of which match task_id variable(s) named within the same model_tasks object. Each property should have one specified value. When combined, the value(s) of these keys define the acceptable target value option",
                       "oneOf": [{
-                        "examples": ["inc hosp", "peak week hosp"],
+                        "examples": [{
+                          "target": "inc hosp"
+                        }, {
+                          "target": "peak week hosp"
+                        }],
                         "type": "object",
                         "properties": {
                           "target": {
