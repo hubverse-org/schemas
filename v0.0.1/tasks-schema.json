@@ -41,7 +41,7 @@
                   "type": "object",
                   "properties": {
                     "origin_date": {
-                      "description": "An object containing arrays of required and optional unique origin dates. Origin date defines the starting point that can be used for calculating a target_date via the formula target_date = origin_date + horizon * time_units_per_horizon (e.g., with weekly data, target_date is calculated as origin_date + horizon * 7 days)",
+                      "description": "An object containing arrays of required and optional unique origin dates. Origin date defines the starting point that can be used for calculating a target_date via the formula target_date = origin_date + horizon x time_units_per_horizon (e.g., with weekly data, target_date is calculated as origin_date + horizon x 7 days)",
                       "examples": [{
                         "required": null,
                         "optional": ["2022-11-05", "2022-11-12", "2022-11-19"]
