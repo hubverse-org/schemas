@@ -116,6 +116,7 @@
           "maxLength": 200
         },
         "methods_long": {
+          "description": "A full description of the methods used by this model.",
           "type": "string"
         }
       },
