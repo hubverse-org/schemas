@@ -809,7 +809,7 @@
                         }
 
                       }, {
-                        "examples": ["null"],
+                        "examples": [null],
                         "type": "null"
                       }]
                     },
