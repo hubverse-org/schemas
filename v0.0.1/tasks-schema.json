@@ -751,7 +751,7 @@
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "description": "Metadata on an individual unique target.",
+                    "description": "Object containg metadata about a single unique target.",
                     "properties": {
                       "target_id": {
                         "description": "Short description that uniquely identifies the target.",
