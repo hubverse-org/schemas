@@ -747,105 +747,109 @@
                   }
                 },
                 "target_metadata": {
-                  "description": "Metadata about target",
-                  "type": "object",
-                  "properties": {
-                    "target_id": {
-                      "description": "Short description that uniquely identifies the target.",
-                      "examples": ["inc hosp", "peak week hosp"],
-                      "type": "string",
-                      "maxLength": 20
-                    },
-                    "target_name": {
-                      "description": "A longer human readable target description that could be used, for example, as a visualisation axis label.",
-                      "examples": [
-                        "Weekly incident influenza hospitalizations",
-                        "Peak week for incident influenza hospitalizations"
-                      ],
-                      "type": "string",
-                      "maxLength": 100
-                    },
-                    "target_units": {
-                      "description": "Unit of observation of the target.",
-                      "examples": [
-                        "rate per 100,000 population",
-                        "count",
-                        "date"
-                      ],
-                      "type": "string",
-                      "maxLength": 100
-                    },
-                    "target_keys": {
-                      "description": "Should be either null, in the case where the target is not specified as a task_id and is specified solely through the target_id target_metadata property or an object with one or more properties, the names of which match task_id variable(s) named within the same model_tasks object. Each property should have one specified value. Each value, or the combination of values if multiple keys are specified, define a single target value.",
-                      "examples": [{
-                          "target": "inc hosp"
-                        }, {
-                          "target": "peak week hosp"
-                        }, {
-                          "target_variable": "hosp",
-                          "target_outcome": "inc"
-                        }, {
-                          "target_variable": "case",
-                          "target_outcome": "peak week"
-                        },
-                        null
-                      ],
-                      "type": ["object", "null"]
-                    },
-                    "description": {
-                      "description": "a verbose description of the target that might include information such as the target_measure above, or definitions of a 'rate' or similar.",
-                      "type": "string"
-                    },
-                    "target_type": {
-                      "description": "Target statistical data type",
-                      "examples": [
-                        "discrete",
-                        "ordinal"
-                      ],
-                      "type": "string",
-                      "enum": [
-                        "continuous",
-                        "discrete",
-                        "date",
-                        "binary",
-                        "categorical",
-                        "ordinal",
-                        "compositional"
-                      ]
-                    },
-                    "is_step_ahead": {
-                      "description": "Whether the target is part of a sequence of values",
-                      "examples": [true, false],
-                      "type": "boolean"
-                    },
-                    "time_unit": {
-                      "description": " if is_step_ahead is true, then this is required and defines the unit of time steps. if is_step_ahead is false, then this should be left out and/or will be ignored if present.",
-                      "examples": ["week"],
-                      "type": "string",
-                      "enum": [
-                        "day",
-                        "week",
-                        "month"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "target_id",
-                    "target_name",
-                    "target_units",
-                    "target_type",
-                    "target_keys",
-                    "is_step_ahead"
-                  ],
-                  "if": {
+                  "description": "Array of objects containing metadata about each unique target, one object for each unique target value.",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "description": "Metadata on an individual unique target.",
                     "properties": {
+                      "target_id": {
+                        "description": "Short description that uniquely identifies the target.",
+                        "examples": ["inc hosp", "peak week hosp"],
+                        "type": "string",
+                        "maxLength": 20
+                      },
+                      "target_name": {
+                        "description": "A longer human readable target description that could be used, for example, as a visualisation axis label.",
+                        "examples": [
+                          "Weekly incident influenza hospitalizations",
+                          "Peak week for incident influenza hospitalizations"
+                        ],
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "target_units": {
+                        "description": "Unit of observation of the target.",
+                        "examples": [
+                          "rate per 100,000 population",
+                          "count",
+                          "date"
+                        ],
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "target_keys": {
+                        "description": "Should be either null, in the case where the target is not specified as a task_id and is specified solely through the target_id target_metadata property or an object with one or more properties, the names of which match task_id variable(s) named within the same model_tasks object. Each property should have one specified value. Each value, or the combination of values if multiple keys are specified, define a single target value.",
+                        "examples": [{
+                            "target": "inc hosp"
+                          }, {
+                            "target": "peak week hosp"
+                          }, {
+                            "target_variable": "hosp",
+                            "target_outcome": "inc"
+                          }, {
+                            "target_variable": "case",
+                            "target_outcome": "peak week"
+                          },
+                          null
+                        ],
+                        "type": ["object", "null"]
+                      },
+                      "description": {
+                        "description": "a verbose description of the target that might include information such as the target_measure above, or definitions of a 'rate' or similar.",
+                        "type": "string"
+                      },
+                      "target_type": {
+                        "description": "Target statistical data type",
+                        "examples": [
+                          "discrete",
+                          "ordinal"
+                        ],
+                        "type": "string",
+                        "enum": [
+                          "continuous",
+                          "discrete",
+                          "date",
+                          "binary",
+                          "categorical",
+                          "ordinal",
+                          "compositional"
+                        ]
+                      },
                       "is_step_ahead": {
-                        "const": true
+                        "description": "Whether the target is part of a sequence of values",
+                        "examples": [true, false],
+                        "type": "boolean"
+                      },
+                      "time_unit": {
+                        "description": " if is_step_ahead is true, then this is required and defines the unit of time steps. if is_step_ahead is false, then this should be left out and/or will be ignored if present.",
+                        "examples": ["week"],
+                        "type": "string",
+                        "enum": [
+                          "day",
+                          "week",
+                          "month"
+                        ]
                       }
+                    },
+                    "required": [
+                      "target_id",
+                      "target_name",
+                      "target_units",
+                      "target_type",
+                      "target_keys",
+                      "is_step_ahead"
+                    ],
+                    "if": {
+                      "properties": {
+                        "is_step_ahead": {
+                          "const": true
+                        }
+                      }
+                    },
+                    "then": {
+                      "required": ["time_unit"]
                     }
-                  },
-                  "then": {
-                    "required": ["time_unit"]
                   }
                 }
               },
