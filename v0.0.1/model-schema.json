@@ -108,6 +108,7 @@
       "type": "object",
       "properties": {
         "data_inputs": {
+          "description": "List or description of data inputs used by the model",
           "type": "string"
         },
         "methods": {
