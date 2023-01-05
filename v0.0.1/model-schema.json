@@ -191,9 +191,6 @@
     "model_abbr",
     "model_contributors",
     "license",
-    "include_viz",
-    "include_ensemble",
-    "include_eval",
     "model_details"
   ]
 }
