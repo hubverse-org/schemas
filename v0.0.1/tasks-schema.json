@@ -1,7 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Infectious-Disease-Modeling-Hubs/schemas/blob/main/v0.0.1/tasks-schema.json",
-  "title": "Hub model task definitions",
+  "title": "Schema for Modeling Hub model task definitions",
+  "description": "This is the schema of the tasks.json configuration file that defines the tasks within a modeling hub.",
   "type": "object",
   "properties": {
     "schema_version": {
