@@ -101,7 +101,9 @@
       "examples": "Gibson GC , Reich NG , Sheldon D. Real-time mechanistic bayesian forecasts of Covid-19 mortality. medRxiv. 2020. https://doi.org/10.1101/2020.12.22.20248736"
     },
     "team_funding": {
-      "type": "string"
+      "description": "Any information about funding source for the team or members of the team.",
+      "type": "string",
+      "examples": "National Institutes of General Medical Sciences (R01GM123456). The content is solely the responsibility of the authors and does not necessarily represent the official views of NIGMS."
     },
     "model_details": {
       "description": "Structured information about the model",
