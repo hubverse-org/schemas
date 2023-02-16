@@ -83,6 +83,22 @@
             "type": "string",
             "examples": "Cramer, E.Y., Huang, Y., Wang, Y. et al. The United States COVID-19 Forecast Hub dataset. Sci Data 9, 462 (2022). https://doi.org/10.1038/s41597-022-01517-w"
         },
+        "file_format": {
+            "description": "Accepted file formats of model output files.",
+            "examples": [
+                ["arrow", "parquet"],
+                ["csv"]
+            ],
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "csv",
+                    "parquet",
+                    "arrow"
+                ]
+            }
+        },
         "timezone": {
             "description": "Hub timezone in TZ database name format. Used primarily for determining exact time of submission deadlines.",
             "examples": [
@@ -628,6 +644,7 @@
         "maintainer",
         "contact",
         "repository_url",
+        "file_format",
         "timezone"
     ]
 }
