@@ -6,6 +6,8 @@
     "type": "object",
     "properties": {
         "schema_version": {
+            "description": "URL to a version of the Modeling Hub schema tasks-schema.json file (see https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/). Used to declare the schema version a 'tasks.json' file is written for and for config file validation. The URL provided should be the URL to the raw content of the schema file on GitHub.",
+            "examples": ["https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v0.0.1/tasks-schema.json"],
             "type": "string",
             "format": "uri"
         },
