@@ -91,15 +91,12 @@
                 ["arrow", "parquet"],
                 ["csv"]
             ],
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "csv",
-                    "parquet",
-                    "arrow"
-                ]
-            }
+            "type": "string",
+            "enum": [
+                "csv",
+                "parquet",
+                "arrow"
+            ]
         },
         "timezone": {
             "description": "Hub timezone in TZ database name format. Used primarily for determining exact time of submission deadlines.",
