@@ -806,7 +806,7 @@
                                             ]
                                         },
                                         "pmf": {
-                                            "description": "Object defining a probability mass function for a discrete variable output type. Includes nominal, binary and categorical variable types.",
+                                            "description": "Object defining a probability mass function for a discrete variable output type. Includes nominal, binary and ordinal variable types.",
                                             "type": "object",
                                             "properties": {
                                                 "type_id": {
