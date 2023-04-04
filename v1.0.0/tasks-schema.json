@@ -987,7 +987,7 @@
                                                     "peak week hosp"
                                                 ],
                                                 "type": "string",
-                                                "maxLength": 20
+                                                "maxLength": 30
                                             },
                                             "target_name": {
                                                 "description": "A longer human readable target description that could be used, for example, as a visualisation axis label.",
