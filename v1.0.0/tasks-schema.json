@@ -805,12 +805,12 @@
                                                 "value"
                                             ]
                                         },
-                                        "categorical": {
-                                            "description": "Object defining a categorical output type.",
+                                        "pmf": {
+                                            "description": "Object defining a probability mass function for a discrete variable output type. Includes nominal, binary and categorical variable types.",
                                             "type": "object",
                                             "properties": {
                                                 "type_id": {
-                                                    "description": "Object containing required and optional arrays specifying valid category values.",
+                                                    "description": "Object containing required and optional arrays specifying valid categories of a discrete variable.",
                                                     "examples": [{
                                                         "required": null,
                                                         "optional": [
@@ -823,7 +823,7 @@
                                                     "type": "object",
                                                     "properties": {
                                                         "required": {
-                                                            "description": "Array of unique categories that must be present for submission to be valid. Can be null if no categories are required and all valid categories are specified in the optional property.",
+                                                            "description": "Array of unique categories of a discrete variable that must be present for submission to be valid. Can be null if no categories are required and all valid categories are specified in the optional property.",
                                                             "type": [
                                                                 "array",
                                                                 "null"
@@ -833,7 +833,7 @@
                                                             }
                                                         },
                                                         "optional": {
-                                                            "description": "Array of valid but not required unique categories. Can be null if all categories are required and are specified in the required property.",
+                                                            "description": "Array of valid but not required unique categories of a discrete variable. Can be null if all categories are required and are specified in the required property.",
                                                             "type": [
                                                                 "array",
                                                                 "null"
@@ -850,7 +850,7 @@
                                                 },
                                                 "value": {
                                                     "type": "object",
-                                                    "description": "Object defining valid values of the probability mass function of the predictive distribution for a given level of a categorical outcome variable.",
+                                                    "description": "Object defining valid values of the probability mass function of the predictive distribution for a given category of a discrete outcome variable.",
                                                     "examples": [{
                                                         "type": "double",
                                                         "minimum": 0,
