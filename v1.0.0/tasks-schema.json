@@ -782,9 +782,7 @@
                                                             "examples": [
                                                                 "double"
                                                             ],
-                                                            "const": [
-                                                                "double"
-                                                            ]
+                                                            "const": "double"
                                                         },
                                                         "minimum": {
                                                             "description": "The minimum inclusive valid cumulative distribution function value. Must be 0.",
@@ -861,9 +859,7 @@
                                                     "properties": {
                                                         "type": {
                                                             "description": "Data type of the probability mass function values.",
-                                                            "const": [
-                                                                "double"
-                                                            ]
+                                                            "const": "double"
                                                         },
                                                         "minimum": {
                                                             "description": "The minimum inclusive valid probability mass function value. Must be 0.",
@@ -952,6 +948,7 @@
                                                             "examples": [{
                                                                 "type": "double"
                                                             }],
+                                                            "type": "string",
                                                             "enum": [
                                                                 "double",
                                                                 "integer"
