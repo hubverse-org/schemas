@@ -17,7 +17,6 @@ After making a new release to the schema repository, ensure `hubDocs` are also a
 - New schema versions should be developed in a separate branch. Name the branch `v{version-number}-branch` to avoid creating release tags which share the same name as a branch later on.
 - New version branches should be merged into `main` when ready to released.
 - Merging into `main` should be accompanied by creating an associated formal release in the repository.
-- After schema release, ensure URLs to latest raw `admin.json` and `tasks.json` schema files are updated in [`docs/source/format/hub-metadata.md` page](https://github.com/Infectious-Disease-Modeling-Hubs/hubDocs/blob/main/docs/source/format/hub-metadata.md?plain=1) on `HubDocs`.
 - Update `HubDocs` site with any additional relevant information associated with the new schema release.
 - Create a new release on `hubDocs` using the same version number but without the `v` (e.g. `v0.0.1` would be released as `0.0.1` on `hubDocs`).
 
