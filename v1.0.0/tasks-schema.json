@@ -1047,7 +1047,7 @@
                                                     "discrete",
                                                     "date",
                                                     "binary",
-                                                    "categorical",
+                                                    "nominal",
                                                     "ordinal",
                                                     "compositional"
                                                 ]
