@@ -473,11 +473,17 @@
                                                         },
                                                         "minimum": {
                                                             "description": "The minimum inclusive valid mean value",
-                                                            "type": "integer"
+                                                            "type": [
+                                                                "number",
+                                                                "integer"
+                                                            ]
                                                         },
                                                         "maximum": {
                                                             "description": "the maximum inclusive valid mean value",
-                                                            "type": "integer"
+                                                            "type": [
+                                                                "number",
+                                                                "integer"
+                                                            ]
                                                         }
                                                     },
                                                     "required": [
@@ -567,11 +573,17 @@
                                                         },
                                                         "minimum": {
                                                             "description": "The minimum inclusive valid median value",
-                                                            "type": "integer"
+                                                            "type": [
+                                                                "number",
+                                                                "integer"
+                                                            ]
                                                         },
                                                         "maximum": {
                                                             "description": "the maximum inclusive valid median value",
-                                                            "type": "integer"
+                                                            "type": [
+                                                                "number",
+                                                                "integer"
+                                                            ]
                                                         }
                                                     },
                                                     "required": [
@@ -660,11 +672,17 @@
                                                             "examples": [
                                                                 0
                                                             ],
-                                                            "type": "number"
+                                                            "type": [
+                                                                "number",
+                                                                "integer"
+                                                            ]
                                                         },
                                                         "maximum": {
                                                             "description": "The maximum inclusive valid quantile value (optional).",
-                                                            "type": "number"
+                                                            "type": [
+                                                                "number",
+                                                                "integer"
+                                                            ]
                                                         }
                                                     },
                                                     "required": [
@@ -714,7 +732,10 @@
                                                             ],
                                                             "items": {
                                                                 "oneOf": [{
-                                                                        "type": "number",
+                                                                        "type": [
+                                                                            "number",
+                                                                            "integer"
+                                                                        ],
                                                                         "minimum": 0
                                                                     },
                                                                     {
@@ -734,7 +755,10 @@
                                                             ],
                                                             "items": {
                                                                 "oneOf": [{
-                                                                        "type": "number",
+                                                                        "type": [
+                                                                            "number",
+                                                                            "integer"
+                                                                        ],
                                                                         "minimum": 0
                                                                     },
                                                                     {
