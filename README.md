@@ -10,7 +10,7 @@ Schemas will be directly versioned, with different versions living in different 
 
 The [`HubDocs`](https://github.com/Infectious-Disease-Modeling-Hubs/hubDocs/tree/main) documentation site is the primary location for documenting schema usage. It is also [versioned by using releases](https://docs.readthedocs.io/en/stable/versions.html) and should track releases in this repository. 
 
-After making a new release to the schema repository, ensure `hubDocs` are also appropriately updated, especially that URLs to schema files which power the interactive docson widget visualisation of schema in the [`docs/source/format/hub-metadata.md` page](https://github.com/Infectious-Disease-Modeling-Hubs/hubDocs/blob/main/docs/source/format/hub-metadata.md?plain=1) are updated to display the latest versions of `admin.json` and `tasks.json` schema files. Once updated a new release in the `hubDocs` should also be created.
+After making a new release to the schema repository, ensure `hubDocs` are also appropriately updated and an associated new release in the `hubDocs` repository also created.
 
 ## New schema version development process
 
