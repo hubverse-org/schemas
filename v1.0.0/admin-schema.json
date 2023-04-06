@@ -14,12 +14,12 @@
         "name": {
             "description": "The name of the hub.",
             "type": "string",
-            "examples": "US COVID-19 Forecast Hub​"
+            "examples": ["US COVID-19 Forecast Hub​"]
         },
         "maintainer": {
             "description": "The entity that maintains and runs the hub.",
             "type": "string",
-            "examples": "The Consortium of Infectious Disease Modeling Hubs"
+            "examples": ["The Consortium of Infectious Disease Modeling Hubs"]
         },
         "contact": {
             "description": "The name and email of a human being who serves as a point of contact for the hub.",
@@ -44,12 +44,12 @@
         "repository_url": {
             "description": "The url for the hub repository.",
             "type": "string",
-            "examples": "https://github.com/reichlab/covid19-forecast-hub"
+            "examples": ["https://github.com/reichlab/covid19-forecast-hub"]
         },
         "zoltar_project_id": {
             "description": "The project id of the Hub in Zoltar",
             "type": "integer",
-            "examples": 44
+            "examples": [44]
         },
         "hub_models": {
             "description": "Array of ensemble and baseline models produced by the hub",
@@ -83,7 +83,7 @@
         "citation": {
             "description": "One or more citations for the hub.",
             "type": "string",
-            "examples": "Cramer, E.Y., Huang, Y., Wang, Y. et al. The United States COVID-19 Forecast Hub dataset. Sci Data 9, 462 (2022). https://doi.org/10.1038/s41597-022-01517-w"
+            "examples": ["Cramer, E.Y., Huang, Y., Wang, Y. et al. The United States COVID-19 Forecast Hub dataset. Sci Data 9, 462 (2022). https://doi.org/10.1038/s41597-022-01517-w"]
         },
         "file_format": {
             "description": "Accepted file formats of model output files.",
