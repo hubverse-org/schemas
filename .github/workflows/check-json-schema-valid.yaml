@@ -1,0 +1,34 @@
+# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
+# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+name: check-json-schema-valid
+
+jobs:
+  check-json-schema-valid:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: install-remotes
+        run: install.packages("remotes")
+        shell: Rscript {0}
+
+      - name: install-jsonvalidate
+        run: remotes::install_github("ropensci/jsonvalidate")
+        shell: Rscript {0}
+
+      - name: parse-tasks
+        run: jsonvalidate::json_validator("v1.0.0/tasks.json")
+        shell: Rscript {0}
