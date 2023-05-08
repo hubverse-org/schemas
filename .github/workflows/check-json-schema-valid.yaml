@@ -30,7 +30,7 @@ jobs:
         shell: Rscript {0}
 
       - name: install-cli
-        run: install.packages("remotes")
+        run: install.packages("cli")
         shell: Rscript {0}
 
       - name: parse-tasks
