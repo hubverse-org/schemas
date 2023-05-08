@@ -30,5 +30,5 @@ jobs:
         shell: Rscript {0}
 
       - name: parse-tasks
-        run: jsonvalidate::json_validator("v1.0.0/tasks.json")
+        run: jsonvalidate::json_validator("v1.0.0/tasks-schema.json")
         shell: Rscript {0}
