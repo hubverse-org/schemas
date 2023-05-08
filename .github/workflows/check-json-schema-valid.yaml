@@ -29,6 +29,18 @@ jobs:
         run: remotes::install_github("ropensci/jsonvalidate")
         shell: Rscript {0}
 
+      - name: install-cli
+        run: install.packages("remotes")
+        shell: Rscript {0}
+
       - name: parse-tasks
-        run: jsonvalidate::json_validator("v0.0.0.9/admin-schema.json")
+        run: |
+          admin_schema <- try(jsonvalidate::json_validator(
+                              "v0.0.0.9/admin-schema.json",
+                              engine = "ajv"))
+          if (class(admin_schema) == "try-error") {
+          cli::cli_abort(attr(admin_schema, "condition")$message)
+          } else {
+          cli::cli_alert_success("admin-schema validated successfully!")
+          }
         shell: Rscript {0}
