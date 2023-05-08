@@ -21,26 +21,13 @@ jobs:
         with:
           use-public-rspm: true
 
-      - name: install-remotes
-        run: install.packages("remotes")
-        shell: Rscript {0}
-
-      - name: install-jsonvalidate
-        run: remotes::install_github("ropensci/jsonvalidate")
-        shell: Rscript {0}
-
-      - name: install-cli
-        run: install.packages(c("cli", "rlang"))
-        shell: Rscript {0}
-
-      - name: parse-tasks
+      - name: install-dependencies
         run: |
-          admin_schema <- try(jsonvalidate::json_validator(
-                              "v0.0.0.9/admin-schema.json",
-                              engine = "ajv"))
-          if (class(admin_schema) == "try-error") {
-          cli::cli_abort(attr(admin_schema, "condition")$message)
-          } else {
-          cli::cli_alert_success("admin-schema validated successfully!")
-          }
+          install.packages(c("remotes", "cli", "rlang"))
+          remotes::install_github("ropensci/jsonvalidate")
+          remotes::install_github("assignUser/octolog")
+        shell: Rscript {0}
+
+      - name: validate-schemas
+        run: source(".github/workflows/R/validate-schema.R")
         shell: Rscript {0}
