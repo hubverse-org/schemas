@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main, master]
 
-name: check-json-schema-valid
+name: JSON Schema Valid
 
 jobs:
   check-json-schema-valid:
