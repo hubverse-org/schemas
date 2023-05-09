@@ -20,10 +20,14 @@ validate_schema <- function(file = c("admin-schema",
         silent = TRUE)
 
     if (class(schema) == "try-error") {
-        octolog::octo_abort(attr(schema, "condition")$message,
-                            .fail_fast = FALSE)
+        octolog::octo_abort(
+            c("x" = "Error detected in file {.path {file_path}}",
+              "!" =  attr(schema, "condition")$message),
+                            .fail_fast = TRUE)
     } else {
-        octolog::octo_inform(c("v" = "{.path {file_path}} validated successfully!"))
+        octolog::octo_inform(
+            c("v" = "{.path {file_path}} validated successfully!")
+            )
     }
 }
 
@@ -31,14 +35,17 @@ validate_schema <- function(file = c("admin-schema",
 octolog::enable_github_colors()
 
 octolog::octo_start_group("Validating schema files...")
+
+octolog::octo_inform("Validating latest schema version {.val {get_latest_version()}}")
+
+# Test failure
+validate_schema("admin-schema", version = "v0.0.1")
+
 # Validate admin-schema.json
 validate_schema("admin-schema")
 
 # Validate tasks-schema.json
 validate_schema("tasks-schema")
 
-
-# Test failure
-validate_schema("admin-schema", version = "v0.0.1")
 
 octolog::octo_end_group()
