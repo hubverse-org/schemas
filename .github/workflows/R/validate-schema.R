@@ -36,10 +36,10 @@ octolog::enable_github_colors()
 
 octolog::octo_start_group("Validating schema files...")
 
-octolog::octo_inform("Validating latest schema version {.val {get_latest_version()}}")
+octolog::octo_inform(
+    c("i" = "Validating latest schema version
+      {.val {get_latest_version()}}"))
 
-# Test failure
-validate_schema("admin-schema", version = "v0.0.1")
 
 # Validate admin-schema.json
 validate_schema("admin-schema")
