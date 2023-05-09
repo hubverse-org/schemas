@@ -29,6 +29,8 @@ validate_schema <- function(file = c("admin-schema",
 
 # VALIDATIONS ----
 octolog::enable_github_colors()
+
+octolog::octo_start_group("Validating schema files...")
 # Validate admin-schema.json
 validate_schema("admin-schema")
 
@@ -38,3 +40,5 @@ validate_schema("tasks-schema")
 
 # Test failure
 validate_schema("admin-schema", version = "v0.0.1")
+
+octolog::octo_end_group()
