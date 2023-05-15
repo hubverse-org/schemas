@@ -1,0 +1,33 @@
+# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
+# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+name: JSON Schema Valid
+
+jobs:
+  check-json-schema-valid:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: install-dependencies
+        run: |
+          install.packages(c("remotes", "cli", "rlang"))
+          remotes::install_github("ropensci/jsonvalidate")
+          remotes::install_github("assignUser/octolog")
+        shell: Rscript {0}
+
+      - name: validate-schemas
+        run: source(".github/workflows/R/validate-schema.R")
+        shell: Rscript {0}
