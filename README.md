@@ -9,6 +9,8 @@ This repository houses JSON schemas for [the Consortium of Infectious Disease Mo
 
 Schemas will be directly versioned, with different versions living in different folders in the root directory of the repo with a name as `vx.x.x` (for example, `v0.0.1`). Any finalized change to any of the three schema files that is added to the main branch will result in the addition of a new set of all schema files. To determine an appropriate version number for the next version, follow [semantic versioning principles](https://snowplow.io/blog/introducing-schemaver-for-semantic-versioning-of-schemas/).
 
+Wen creating new versions and making changes to the schema file, make sure to record important user facing changes in [`NEWS.md`](NEWS.md).
+
 ## Schema documentation
 
 The [`HubDocs`](https://github.com/Infectious-Disease-Modeling-Hubs/hubDocs/tree/main) documentation site is the primary location for documenting schema usage. It is also [versioned by using releases](https://docs.readthedocs.io/en/stable/versions.html) and should track releases in this repository. 
