@@ -971,7 +971,8 @@
                                                 "value"
                                             ]
                                         }
-                                    }
+                                    },
+                                    "additionalProperties": false
                                 },
                                 "target_metadata": {
                                     "description": "Array of objects containing metadata about each unique target, one object for each unique target value.",
@@ -1081,6 +1082,7 @@
                                             "target_keys",
                                             "is_step_ahead"
                                         ],
+                                        "additionalProperties": false,
                                         "if": {
                                             "properties": {
                                                 "is_step_ahead": {
@@ -1191,12 +1193,14 @@
                     "round_id",
                     "model_tasks",
                     "submissions_due"
-                ]
+                ],
+                "additionalProperties": false
             }
         }
     },
     "required": [
         "rounds",
         "schema_version"
-    ]
+    ],
+    "additionalProperties": false
 }

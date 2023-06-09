@@ -648,5 +648,6 @@
         "repository_url",
         "file_format",
         "timezone"
-    ]
+    ],
+    "additionalProperties": false
 }
