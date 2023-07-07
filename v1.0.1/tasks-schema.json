@@ -388,6 +388,7 @@
                                                     }
                                                 },
                                                 "optional": {
+                                                    "description": "Array of valid but not required unique age group identifiers. Can be null if all age group are required and are specified in the required property.",
                                                     "type": [
                                                         "array",
                                                         "null"
@@ -404,7 +405,32 @@
                                             ]
                                         }
                                     },
-                                    "additionalProperties": true
+                                    "additionalProperties": {
+                                        "type": "object",
+                                        "description": "An object containing arrays of required and optional unique values for a custom Task ID",
+                                        "properties": {
+                                            "required": {
+                                                "description": "Array of custom Task ID unique values that must be present for submission to be valid. Can be null if no values are required and all valid values are specified in the optional property.",
+                                                "type": [
+                                                    "array",
+                                                    "null"
+                                                ],
+                                                "uniqueItems": true
+                                            },
+                                            "optional": {
+                                                "description": "Array of valid but not required unique custom Task ID values. Can be null if all values are required and are specified in the required property.",
+                                                "type": [
+                                                    "array",
+                                                    "null"
+                                                ],
+                                                "uniqueItems": true
+                                            }
+                                        },
+                                        "required": [
+                                            "required",
+                                            "optional"
+                                        ]
+                                    }
                                 },
                                 "output_type": {
                                     "type": "object",
