@@ -90,6 +90,48 @@
                                                 "optional"
                                             ]
                                         },
+                                        "forecast_date": {
+                                            "description": "An object containing arrays of required and optional unique forecast dates. Forecast date usually defines the starting point that can be used for calculating a target_date via the formula target_date = origin_date + horizon x time_units_per_horizon (e.g., with weekly data, target_date is calculated as origin_date + horizon x 7 days)",
+                                            "examples": [{
+                                                "required": null,
+                                                "optional": [
+                                                    "2022-11-05",
+                                                    "2022-11-12",
+                                                    "2022-11-19"
+                                                ]
+                                            }],
+                                            "type": "object",
+                                            "properties": {
+                                                "required": {
+                                                    "description": "Array of forecast date unique identifiers that must be present for submission to be valid. Can be null if no origin dates are required and all valid forecast dates are specified in the optional property.",
+                                                    "type": [
+                                                        "array",
+                                                        "null"
+                                                    ],
+                                                    "uniqueItems": true,
+                                                    "items": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    }
+                                                },
+                                                "optional": {
+                                                    "description": "Array of valid but not required unique forecast date identifiers. Can be null if all forecast dates are required and are specified in the required property.",
+                                                    "type": [
+                                                        "array",
+                                                        "null"
+                                                    ],
+                                                    "uniqueItems": true,
+                                                    "items": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "required",
+                                                "optional"
+                                            ]
+                                        },
                                         "scenario_id": {
                                             "description": "An object containing arrays of required and optional unique identifiers of each valid scenario.",
                                             "examples": [{
@@ -299,6 +341,48 @@
                                                 },
                                                 "optional": {
                                                     "description": "Array of valid but not required unique target date identifiers. Can be null if all target dates are required and are specified in the required property.",
+                                                    "type": [
+                                                        "array",
+                                                        "null"
+                                                    ],
+                                                    "uniqueItems": true,
+                                                    "items": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "required",
+                                                "optional"
+                                            ]
+                                        },
+                                        "target_end_date": {
+                                            "description": "An object containing arrays of required and optional unique target end dates. For short-term forecasts, the target_end_date specifies the date of occurrence of the outcome of interest. For instance, if models are requested to forecast the number of hospitalizations that will occur on 2022-07-15, the target_end_date is 2022-07-15",
+                                            "examples": [{
+                                                "required": null,
+                                                "optional": [
+                                                    "2022-11-12",
+                                                    "2022-11-19",
+                                                    "2022-11-26"
+                                                ]
+                                            }],
+                                            "type": "object",
+                                            "properties": {
+                                                "required": {
+                                                    "description": "Array of target end date unique identifiers that must be present for submission to be valid. Can be null if no target end dates are required and all valid target end dates are specified in the optional property.",
+                                                    "type": [
+                                                        "array",
+                                                        "null"
+                                                    ],
+                                                    "uniqueItems": true,
+                                                    "items": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    }
+                                                },
+                                                "optional": {
+                                                    "description": "Array of valid but not required unique target end date identifiers. Can be null if all target end dates are required and are specified in the required property.",
                                                     "type": [
                                                         "array",
                                                         "null"
