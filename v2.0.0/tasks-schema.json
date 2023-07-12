@@ -434,14 +434,14 @@
                                 },
                                 "output_type": {
                                     "type": "object",
-                                    "description": "Object defining valid model output types for a given modeling task. The name of each property corresponds to valid values in column 'type' while the 'type_id' property of each output type defines the valid values of the 'type_id' column and the 'value' property defines the valid values of the 'value' column for a given output type.",
+                                    "description": "Object defining valid model output types for a given modeling task. The name of each property corresponds to valid values in column 'output_type' while the 'output_type_id' property of each output type defines the valid values of the 'output_type_id' column and the 'value' property defines the valid values of the 'value' column for a given output type.",
                                     "properties": {
                                         "mean": {
                                             "type": "object",
                                             "description": "Object defining the mean of the predictive distribution output type.",
                                             "properties": {
-                                                "type_id": {
-                                                    "description": "type_id is not meaningful for a mean output_type. The property is primarily used to determine whether mean is a required or optional output type through properties required and optional. If mean is a required output type, the required property must be an array containing the single string element 'NA' and the optional property must be set to null. If mean is an optional output type, the optional property must be an array containing the single string element 'NA' and the required property must be set to null",
+                                                "output_type_id": {
+                                                    "description": "output_type_id is not meaningful for a mean output_type. The property is primarily used to determine whether mean is a required or optional output type through properties required and optional. If mean is a required output type, the required property must be an array containing the single string element 'NA' and the optional property must be set to null. If mean is an optional output type, the optional property must be an array containing the single string element 'NA' and the required property must be set to null",
                                                     "examples": [{
                                                             "required": [
                                                                 "NA"
@@ -531,7 +531,7 @@
                                                 }
                                             },
                                             "required": [
-                                                "type_id",
+                                                "output_type_id",
                                                 "value"
                                             ]
                                         },
@@ -539,8 +539,8 @@
                                             "type": "object",
                                             "description": "Object defining the median of the predictive distribution output type",
                                             "properties": {
-                                                "type_id": {
-                                                    "description": "type_id is not meaningful for a median output_type. The property is primarily used to determine whether median is a required or optional output type through properties required and optional. If median is a required output type, the required property must be an array containing the single string element 'NA' and the optional property must be set to null. If median is an optional output type, the optional property must be an array containing the single string element 'NA' and the required property must be set to null",
+                                                "output_type_id": {
+                                                    "description": "output_type_id is not meaningful for a median output_type. The property is primarily used to determine whether median is a required or optional output type through properties required and optional. If median is a required output type, the required property must be an array containing the single string element 'NA' and the optional property must be set to null. If median is an optional output type, the optional property must be an array containing the single string element 'NA' and the required property must be set to null",
                                                     "examples": [{
                                                             "required": [
                                                                 "NA"
@@ -630,7 +630,7 @@
                                                 }
                                             },
                                             "required": [
-                                                "type_id",
+                                                "output_type_id",
                                                 "value"
                                             ]
                                         },
@@ -638,7 +638,7 @@
                                             "description": "Object defining the quantiles of the predictive distribution output type.",
                                             "type": "object",
                                             "properties": {
-                                                "type_id": {
+                                                "output_type_id": {
                                                     "description": "Object containing required and optional arrays defining the probability levels at which quantiles of the predictive distribution will be recorded.",
                                                     "examples": [{
                                                         "required": [
@@ -730,7 +730,7 @@
                                                 }
                                             },
                                             "required": [
-                                                "type_id",
+                                                "output_type_id",
                                                 "value"
                                             ]
                                         },
@@ -738,7 +738,7 @@
                                             "description": "Object defining the cumulative distribution function of the predictive distribution output type.",
                                             "type": "object",
                                             "properties": {
-                                                "type_id": {
+                                                "output_type_id": {
                                                     "description": "Object containing required and optional arrays defining possible values of the target variable at which values of the cumulative distribution function of the predictive distribution will be recorded.",
                                                     "examples": [{
                                                             "required": [
@@ -845,7 +845,7 @@
                                                 }
                                             },
                                             "required": [
-                                                "type_id",
+                                                "output_type_id",
                                                 "value"
                                             ]
                                         },
@@ -853,7 +853,7 @@
                                             "description": "Object defining a probability mass function for a discrete variable output type. Includes nominal, binary and ordinal variable types.",
                                             "type": "object",
                                             "properties": {
-                                                "type_id": {
+                                                "output_type_id": {
                                                     "description": "Object containing required and optional arrays specifying valid categories of a discrete variable.",
                                                     "examples": [{
                                                         "required": null,
@@ -924,7 +924,7 @@
                                                 }
                                             },
                                             "required": [
-                                                "type_id",
+                                                "output_type_id",
                                                 "value"
                                             ]
                                         },
@@ -932,7 +932,7 @@
                                             "description": "Object defining a sample output type.",
                                             "type": "object",
                                             "properties": {
-                                                "type_id": {
+                                                "output_type_id": {
                                                     "description": "Object containing required and optional arrays specifying valid sample values.",
                                                     "examples": [{
                                                         "required": [
@@ -989,7 +989,7 @@
                                                 },
                                                 "value": {
                                                     "type": "object",
-                                                    "description": "Object defining valid values of samples from the predictive distribution for a given sample index.  Depending on the Hub specification, samples with the same sample index (specified by the type_id) may be assumed to correspond to a joint distribution across multiple levels of the task id variables. See Hub documentation for details.",
+                                                    "description": "Object defining valid values of samples from the predictive distribution for a given sample index.  Depending on the Hub specification, samples with the same sample index (specified by the output_type_id) may be assumed to correspond to a joint distribution across multiple levels of the task id variables. See Hub documentation for details.",
                                                     "properties": {
                                                         "type": {
                                                             "description": "Data type of sample value from the predictive distribution.",
@@ -1015,7 +1015,7 @@
                                                 }
                                             },
                                             "required": [
-                                                "type_id",
+                                                "output_type_id",
                                                 "value"
                                             ]
                                         }
