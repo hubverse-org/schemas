@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v1.0.1/admin-schema.json",
+    "$id": "https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v2.0.0/admin-schema.json",
     "title": "Schema for Modeling Hub administrative settings",
     "description": "This JSON file provides a schema for modeling hub administrative information.",
     "type": "object",
