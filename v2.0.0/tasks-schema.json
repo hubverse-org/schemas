@@ -283,8 +283,13 @@
                                             "examples": [{
                                                 "required": null,
                                                 "optional": [
-                                                    "weekly rate"
+                                                    "inc hosp",
+                                                    "inc case",
+                                                    "inc death"
                                                 ]
+                                            }, {
+                                                "required": ["peak week inc hosp"],
+                                                "optional": null
                                             }],
                                             "properties": {
                                                 "required": {
