@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v2.0.0/tasks-schema.json",
     "title": "Schema for Modeling Hub model task definitions",
     "description": "This is the schema of the tasks.json configuration file that defines the tasks within a modeling hub.",
@@ -103,7 +103,7 @@
                                             "type": "object",
                                             "properties": {
                                                 "required": {
-                                                    "description": "Array of forecast date unique identifiers that must be present for submission to be valid. Can be null if no origin dates are required and all valid forecast dates are specified in the optional property.",
+                                                    "description": "Array of forecast date unique identifiers that must be present for submission to be valid. Can be null if no forecast dates are required and all valid forecast dates are specified in the optional property.",
                                                     "type": [
                                                         "array",
                                                         "null"
