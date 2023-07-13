@@ -278,7 +278,7 @@
                                             ]
                                         },
                                         "target": {
-                                            "description": "An object containing arrays of required and optional unique identifiers for each valid target.",
+                                            "description": "An object containing arrays of required and optional unique identifiers for each valid target. Usually represents a single task ID target key variable.",
                                             "type": "object",
                                             "examples": [{
                                                 "required": null,
@@ -300,6 +300,84 @@
                                                 },
                                                 "optional": {
                                                     "description": "Array of valid but not required unique target identifiers. Can be null if all targets are required and are specified in the required property.",
+                                                    "type": [
+                                                        "array",
+                                                        "null"
+                                                    ],
+                                                    "uniqueItems": true,
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "required",
+                                                "optional"
+                                            ]
+                                        },
+                                        "target_variable": {
+                                            "description": "An object containing arrays of required and optional unique identifiers for each valid target variable. Usually forms part of a pair of task ID target key variables (along with target_outcome) which combine to define individual targets.",
+                                            "type": "object",
+                                            "examples": [{
+                                                "required": null,
+                                                "optional": ["hosp", "death", "case"]
+                                            }, {
+                                                "required": ["hosp"],
+                                                "optional": ["case"]
+                                            }],
+                                            "properties": {
+                                                "required": {
+                                                    "description": "Array of target variable unique identifiers that must be present for submission to be valid. Can be null if no target variables are required and all valid target variables are specified in the optional property.",
+                                                    "type": [
+                                                        "array",
+                                                        "null"
+                                                    ],
+                                                    "uniqueItems": true,
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "optional": {
+                                                    "description": "Array of valid but not required unique target variable identifiers. Can be null if all target variables are required and are specified in the required property.",
+                                                    "type": [
+                                                        "array",
+                                                        "null"
+                                                    ],
+                                                    "uniqueItems": true,
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "required",
+                                                "optional"
+                                            ]
+                                        },
+                                        "target_outcome": {
+                                            "description": "An object containing arrays of required and optional unique identifiers for each valid target outcome. Usually forms part of a pair of task ID target key variables (along with target_variable) which combine to define individual targets.",
+                                            "type": "object",
+                                            "examples": [{
+                                                "required": ["inc"],
+                                                "optional": null
+                                            }, {
+                                                "required": ["inc"],
+                                                "optional": ["cum"]
+                                            }],
+                                            "properties": {
+                                                "required": {
+                                                    "description": "Array of target outcome unique identifiers that must be present for submission to be valid. Can be null if no target outcomes are required and all valid target outcomes are specified in the optional property.",
+                                                    "type": [
+                                                        "array",
+                                                        "null"
+                                                    ],
+                                                    "uniqueItems": true,
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "optional": {
+                                                    "description": "Array of valid but not required unique target outcome identifiers. Can be null if all target outcomes are required and are specified in the required property.",
                                                     "type": [
                                                         "array",
                                                         "null"
