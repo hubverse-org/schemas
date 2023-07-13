@@ -3,7 +3,7 @@
 * Major breaking change: Output type property `type_id` renamed to `output_type_id` for consistency in with changes in model output data.
 * Added `uniqueItem` checks to all `optional` and `required` arrays.
 * Added a schema to `task_ids` `additionalProperty` property instead of just setting it to `true`. This schema ensures that any custom task IDs added by hub administrators at least checked for being objects and having `optional` and `required` properties that are either arrays or null.
-* Added standard task IDs `forecast_date` (equivalent to `origin_date`), `target_end_date` (equivalent to `target_date`).
+* Added standard task IDs `forecast_date` (equivalent to `origin_date`), `target_end_date` (equivalent to `target_date`) and `target_variable` & `target_outcome` which can be used to split targets across two task IDs.
 
 # v1.0.0
 
