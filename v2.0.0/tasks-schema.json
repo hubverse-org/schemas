@@ -91,7 +91,7 @@
                                             ]
                                         },
                                         "forecast_date": {
-                                            "description": "An object containing arrays of required and optional unique forecast dates. Forecast date usually defines the starting point that can be used for calculating a target_date via the formula target_date = forecast_date + horizon x time_units_per_horizon (e.g., with weekly data, target_date is calculated as forecast_date + horizon x 7 days)",
+                                            "description": "An object containing arrays of required and optional unique forecast dates. Forecast date usually defines the date that a model is run to produce a forecast.",
                                             "examples": [{
                                                 "required": null,
                                                 "optional": [
