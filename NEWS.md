@@ -1,3 +1,9 @@
+# v2.0.1
+
+* Non-breaking change: introduced an optional `cloud` group to `admin-schema.json` to support cloud-enabled Hubs:
+  * `cloud` group includes a boolean `enabled` property to indicate whether or not the hub will store data in the cloud.
+  * `cloud.host` is an object with properties that describe the cloud storage provider and location. It is required when `cloud.enabled` is `true`.
+
 # v2.0.0
 
 * Major breaking change: Output type property `type_id` renamed to `output_type_id` for consistency in with changes in model output data.
