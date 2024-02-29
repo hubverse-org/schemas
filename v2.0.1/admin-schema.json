@@ -646,14 +646,19 @@
                 "enabled": {"type": "boolean"},
                 "host": {
                     "type": "object",
-                    "required": ["name", "storage"],
+                    "required": ["name", "storage_servce", "storage_location"],
                     "properties": {
                         "name": {
                             "description": "Name of the cloud storage provider.",
                             "type": "string",
                             "enum": ["aws"]
                         },
-                        "storage": {
+                        "storage_service": {
+                            "description": "Name of the cloud service used as backend storage",
+                            "type": "string",
+                            "enum": ["s3"]
+                        },
+                        "storage_location": {
                             "description": "Cloud storage location, excluding prefix (for example, AWS S3 bucket name).",
                             "type": "string"
                         }
@@ -673,7 +678,8 @@
                     "enabled": true,
                     "host": {
                         "name": "aws",
-                        "storage": "hub-s3-bucket-name"
+                        "storage_service": "s3",
+                        "storage_location": "hub-s3-bucket-name"
                     }
                 }
             ]
