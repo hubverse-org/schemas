@@ -1,13 +1,13 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v2.1.0/tasks-schema.json",
+    "$id": "https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v3.0.0/tasks-schema.json",
     "title": "Schema for Modeling Hub model task definitions",
     "description": "This is the schema of the tasks.json configuration file that defines the tasks within a modeling hub.",
     "type": "object",
     "properties": {
         "schema_version": {
             "description": "URL to a version of the Modeling Hub schema tasks-schema.json file (see https://github.com/Infectious-Disease-Modeling-Hubs/schemas). Used to declare the schema version a 'tasks.json' file is written for and for config file validation. The URL provided should be the URL to the raw content of the schema file on GitHub.",
-            "examples": ["https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v2.1.0/tasks-schema.json"],
+            "examples": ["https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v3.0.0/tasks-schema.json"],
             "type": "string",
             "format": "uri"
         },
