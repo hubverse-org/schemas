@@ -1,3 +1,7 @@
+# v3.0.0
+
+* Breaking change: introduction of new `sample` output type id schema specification in `tasks.json`. The main breaking change is the removal of the `output_type_id` property in `sample`. Instead, the collection of samples is defined through a new `output_type_id_params` object.
+
 # v2.0.1
 
 * Non-breaking change: introduced an optional `cloud` group to `admin-schema.json` to support cloud-enabled Hubs:
