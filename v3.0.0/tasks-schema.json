@@ -1190,10 +1190,18 @@
                                                             ]
                                                         },
                                                         "minimum": {
-                                                            "description": "The minimum inclusive valid sample value from the predictive distribution"
+                                                            "description": "The minimum inclusive valid sample value from the predictive distribution.",
+                                                            "type": [
+                                                                "number",
+                                                                "integer"
+                                                            ]
                                                         },
                                                         "maximum": {
-                                                            "description": "The maximum inclusive valid sample value from the predictive distribution"
+                                                            "description": "The maximum inclusive valid sample value from the predictive distribution.",
+                                                            "type": [
+                                                                "number",
+                                                                "integer"
+                                                            ]
                                                         }
                                                     },
                                                     "required": [
