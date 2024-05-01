@@ -34,17 +34,27 @@
                 }
             }
         },
-        "repository_host": {
-            "description": "The name of the web host for the hub repository",
-            "type": "string",
-            "enum": [
-                "GitHub"
-            ]
-        },
-        "repository_url": {
-            "description": "The url for the hub repository.",
-            "type": "string",
-            "examples": ["https://github.com/reichlab/covid19-forecast-hub"]
+        "repository": {
+            "description": "Details of the hub repository.",
+            "examples": [{
+                "host": "github",
+                "owner": "Infectious-Disease-Modeling-Hubs",
+                "name": "example-simple-forecast-hub"
+            }],
+            "type": "object",
+            "properties": {
+                "host": {
+                    "description": "The name of the web host for the hub repository",
+                    "type": "string",
+                    "enum": ["github"]
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
         },
         "zoltar_project_id": {
             "description": "The project id of the Hub in Zoltar",
