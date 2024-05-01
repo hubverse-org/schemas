@@ -1100,7 +1100,7 @@
                                             "type": "object",
                                             "properties": {
                                                 "output_type_id_params": {
-                                                    "description": "Object containing parameters specifying how samples where drawn.",
+                                                    "description": "Object containing parameters specifying how samples were drawn.",
                                                     "examples": [{
                                                         "output_type_id_params": {
                                                             "is_required": true,
