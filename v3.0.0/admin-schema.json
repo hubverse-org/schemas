@@ -35,7 +35,7 @@
             }
         },
         "repository": {
-            "description": "Details of the hub repository.",
+            "description": "Object containing details of the hub repository.",
             "examples": [{
                 "host": "github",
                 "owner": "Infectious-Disease-Modeling-Hubs",
