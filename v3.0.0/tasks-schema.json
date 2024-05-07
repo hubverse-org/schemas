@@ -1121,7 +1121,7 @@
                                                     "type": "object",
                                                     "properties": {
                                                         "is_required": {
-                                                            "description": "Boolean. Whether inclusion of samples are required for the submission to be valid",
+                                                            "description": "Boolean. Whether inclusion of samples is required for the submission to be valid",
                                                             "type": "boolean"
                                                         },
                                                         "type": {
