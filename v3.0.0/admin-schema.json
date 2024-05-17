@@ -700,7 +700,7 @@
         "name",
         "maintainer",
         "contact",
-        "repository_url",
+        "repository",
         "file_format",
         "timezone"
     ],
