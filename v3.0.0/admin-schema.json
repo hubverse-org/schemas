@@ -61,35 +61,6 @@
             "type": "integer",
             "examples": [44]
         },
-        "hub_models": {
-            "description": "Array of ensemble and baseline models produced by the hub",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "team_abbr": {
-                        "description": "Abbreviated team name of the hub",
-                        "type": "string",
-                        "pattern": "^[a-zA-Z0-9_+]+$",
-                        "maxLength": 16
-                    },
-                    "model_abbr": {
-                        "description": "Abbreviated name of the model",
-                        "type": "string",
-                        "pattern": "^[a-zA-Z0-9_+]+$",
-                        "maxLength": 16
-                    },
-                    "model_type": {
-                        "description": "The type of model: baseline or ensemble",
-                        "type": "string",
-                        "enum": [
-                            "baseline",
-                            "ensemble"
-                        ]
-                    }
-                }
-            }
-        },
         "citation": {
             "description": "One or more citations for the hub.",
             "type": "string",
