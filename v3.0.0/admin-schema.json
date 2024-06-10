@@ -61,35 +61,6 @@
             "type": "integer",
             "examples": [44]
         },
-        "hub_models": {
-            "description": "Array of ensemble and baseline models produced by the hub",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "team_abbr": {
-                        "description": "Abbreviated team name of the hub",
-                        "type": "string",
-                        "pattern": "^[a-zA-Z0-9_+]+$",
-                        "maxLength": 16
-                    },
-                    "model_abbr": {
-                        "description": "Abbreviated name of the model",
-                        "type": "string",
-                        "pattern": "^[a-zA-Z0-9_+]+$",
-                        "maxLength": 16
-                    },
-                    "model_type": {
-                        "description": "The type of model: baseline or ensemble",
-                        "type": "string",
-                        "enum": [
-                            "baseline",
-                            "ensemble"
-                        ]
-                    }
-                }
-            }
-        },
         "citation": {
             "description": "One or more citations for the hub.",
             "type": "string",
@@ -641,8 +612,8 @@
             ]
         },
         "model_output_dir": {
-            "description": "Relative path, with respect to the root of hub, to directory containing model output data. If property not supplied, the default path `model_output/` assumed",
-            "default": "model_output",
+            "description": "Relative path, with respect to the root of hub, to directory containing model output data. If property not supplied, the default path `model-output` assumed",
+            "default": "model-output",
             "examples": [
                 "forecasts",
                 "data/model_output"

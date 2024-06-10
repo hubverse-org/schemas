@@ -2,6 +2,8 @@
 
 * Breaking change: introduction of new `sample` output type id schema specification in `tasks.json`. The main breaking change is the removal of the `output_type_id` property in `sample`. Instead, the collection of samples is defined through a new `output_type_id_params` object (#70).
 * Breaking change: The `repository_url` and `repository_host` properties in `admin.json` have been deprecated in favour of a sigle `repository` object with separate `host`, `owner` and `name` properties (#67).
+* Breaking change: The optional `hub_models` property in `admin.json` has been removed as it's schema could create conflicts with the `model_abbr` and `team_abbr` schema specification in the hub administered `model-metadata-schema.json (#77).
+* Additional properties are now allowed at the round item property level (#74).
 
 # v2.0.1
 

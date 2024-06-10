@@ -24,6 +24,4 @@ After making a new release to the schema repository, ensure `hubDocs` are also a
 - Merging into `main` should be accompanied by creating an associated formal release in the repository.
 - Update `HubDocs` site with any additional relevant information associated with the new schema release.
 - Create a new release on `hubDocs` using the same version number but without the `v` (e.g. `v0.0.1` would be released as `0.0.1` on `hubDocs`).
-
-
-
+- Update the [`hubTemplate`](https://github.com/Infectious-Disease-Modeling-Hubs/hubTemplate) config to reflect the most up to date schema. Create a new release using the same version#

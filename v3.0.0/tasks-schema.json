@@ -1437,7 +1437,7 @@
                     "model_tasks",
                     "submissions_due"
                 ],
-                "additionalProperties": false
+                "additionalProperties": true
             }
         }
     },
