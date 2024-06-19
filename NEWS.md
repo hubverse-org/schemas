@@ -4,6 +4,7 @@
 * Breaking change: The `repository_url` and `repository_host` properties in `admin.json` have been deprecated in favour of a sigle `repository` object with separate `host`, `owner` and `name` properties (#67).
 * Breaking change: The optional `hub_models` property in `admin.json` has been removed as it's schema could create conflicts with the `model_abbr` and `team_abbr` schema specification in the hub administered `model-metadata-schema.json (#77).
 * Additional properties are now allowed at the round item property level (#74).
+* Host organisation name changed in schema `id` properties to `hubverse-org` throughout all schema versions.
 
 # v2.0.1
 
