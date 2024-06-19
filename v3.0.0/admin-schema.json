@@ -1,13 +1,13 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v1.0.0/admin-schema.json",
+    "$id": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v3.0.0/admin-schema.json",
     "title": "Schema for Modeling Hub administrative settings",
     "description": "This JSON file provides a schema for modeling hub administrative information.",
     "type": "object",
     "properties": {
         "schema_version": {
             "description": "URL to a version of the Modeling Hub schema admin-schema.json file (see https://github.com/hubverse-org/schemas). Used to declare the schema version an 'admin.json' file is written for and for config file validation. The URL provided should be the URL to the raw content of the schema file on GitHub.",
-            "examples": ["https://raw.githubusercontent.com/hubverse-org/schemas/main/v0.0.1/admin-schema.json"],
+            "examples": ["https://raw.githubusercontent.com/hubverse-org/schemas/main/v3.0.0/admin-schema.json"],
             "type": "string",
             "format": "uri"
         },
@@ -34,51 +34,32 @@
                 }
             }
         },
-        "repository_host": {
-            "description": "The name of the web host for the hub repository",
-            "type": "string",
-            "enum": [
-                "GitHub"
-            ]
-        },
-        "repository_url": {
-            "description": "The url for the hub repository.",
-            "type": "string",
-            "examples": ["https://github.com/reichlab/covid19-forecast-hub"]
+        "repository": {
+            "description": "Object containing details of the hub repository.",
+            "examples": [{
+                "host": "github",
+                "owner": "hubverse-org",
+                "name": "example-simple-forecast-hub"
+            }],
+            "type": "object",
+            "properties": {
+                "host": {
+                    "description": "The name of the web host for the hub repository",
+                    "type": "string",
+                    "enum": ["github"]
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
         },
         "zoltar_project_id": {
             "description": "The project id of the Hub in Zoltar",
             "type": "integer",
             "examples": [44]
-        },
-        "hub_models": {
-            "description": "Array of ensemble and baseline models produced by the hub",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "team_abbr": {
-                        "description": "Abbreviated team name of the hub",
-                        "type": "string",
-                        "pattern": "^[a-zA-Z0-9_+]+$",
-                        "maxLength": 16
-                    },
-                    "model_abbr": {
-                        "description": "Abbreviated name of the model",
-                        "type": "string",
-                        "pattern": "^[a-zA-Z0-9_+]+$",
-                        "maxLength": 16
-                    },
-                    "model_type": {
-                        "description": "The type of model: baseline or ensemble",
-                        "type": "string",
-                        "enum": [
-                            "baseline",
-                            "ensemble"
-                        ]
-                    }
-                }
-            }
         },
         "citation": {
             "description": "One or more citations for the hub.",
@@ -631,13 +612,58 @@
             ]
         },
         "model_output_dir": {
-            "description": "Relative path, with respect to the root of hub, to directory containing model output data. If property not supplied, the default path `model_output/` assumed",
-            "default": "model_output",
+            "description": "Relative path, with respect to the root of hub, to directory containing model output data. If property not supplied, the default path `model-output` assumed",
+            "default": "model-output",
             "examples": [
                 "forecasts",
                 "data/model_output"
             ],
             "type": "string"
+        },
+        "cloud": {
+            "description": "Optional settings for cloud-enabled hubs",
+            "type": "object",
+            "properties": {
+                "enabled": {"type": "boolean"},
+                "host": {
+                    "type": "object",
+                    "required": ["name", "storage_service", "storage_location"],
+                    "properties": {
+                        "name": {
+                            "description": "Name of the cloud storage provider.",
+                            "type": "string",
+                            "enum": ["aws"]
+                        },
+                        "storage_service": {
+                            "description": "Name of the cloud service used as backend storage",
+                            "type": "string",
+                            "enum": ["s3"]
+                        },
+                        "storage_location": {
+                            "description": "Cloud storage location, excluding prefix (for example, AWS S3 bucket name).",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "if": {
+                "properties": {
+                    "enabled": {"const": true}
+                }
+            },
+            "then": {
+                "required": ["host"]
+            },
+            "examples": [
+                {
+                    "enabled": true,
+                    "host": {
+                        "name": "aws",
+                        "storage_service": "s3",
+                        "storage_location": "hub-s3-bucket-name"
+                    }
+                }
+            ]
         }
     },
     "required": [
@@ -645,7 +671,7 @@
         "name",
         "maintainer",
         "contact",
-        "repository_url",
+        "repository",
         "file_format",
         "timezone"
     ],
