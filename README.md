@@ -3,7 +3,8 @@
 [![JSON Schema Valid](https://github.com/hubverse-org/schemas/actions/workflows/check-json-schema-valid.yaml/badge.svg)](https://github.com/hubverse-org/schemas/actions/workflows/check-json-schema-valid.yaml)
 <!--- Badges-end --->
 
-This repository houses JSON schemas for [the Consortium of Infectious Disease Modeling Hubs](https://github.com/hubverse-org). These schemas define the specifications for the configuration files that are required to be present in a modeling hub. Full documentation about modeling hubs can be found at [the Modeling Hub documentation site](https://hubdocs.readthedocs.io/en/latest/), with some [specific documentation about the schema files](https://hubdocs.readthedocs.io/en/latest/format/hub-metadata.html).
+
+This repository houses JSON schemas for [the Consortium of Infectious Disease Modeling Hubs](https://github.com/hubverse-org). These schemas define the specifications for the configuration files that are required to be present in a modeling hub. Full documentation about modeling hubs can be found at [the Modeling Hub documentation site](https://hubdocs.readthedocs.io/en/latest/), with some [specific documentation about the schema files](https://hubverse.io/en/latest/user-guide/hub-config.html).
 
 # Versioning
 
@@ -13,7 +14,9 @@ Wen creating new versions and making changes to the schema file, make sure to re
 
 ## Schema documentation
 
-The [`HubDocs`](https://github.com/hubverse-org/hubDocs/tree/main) documentation site is the primary location for documenting schema usage. It is also [versioned by using releases](https://docs.readthedocs.io/en/stable/versions.html) and should track releases in this repository. 
+
+The [`HubDocs`](https://hubdocs.readthedocs.io/en/latest/index.html) documentation site is the primary location for documenting schema usage. It is also [versioned by using releases](https://docs.readthedocs.io/en/stable/versions.html) and should track releases in this repository. 
+
 
 After making a new release to the schema repository, ensure `hubDocs` are also appropriately updated and an associated new release in the `hubDocs` repository also created.
 
