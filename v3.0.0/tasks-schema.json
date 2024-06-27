@@ -906,7 +906,7 @@
                                             "type": "object",
                                             "properties": {
                                                 "output_type_id": {
-                                                    "description": "Object containing required and optional arrays defining possible values of the target variable at which values of the cumulative distribution function of the predictive distribution will be recorded.",
+                                                    "description": "Object containing required and optional arrays defining possible values of the target variable at which values of the cumulative distribution function of the predictive distribution will be recorded. These should be listed in order from low to high.",
                                                     "examples": [{
                                                             "required": [
                                                                 10.0,
@@ -1021,7 +1021,7 @@
                                             "type": "object",
                                             "properties": {
                                                 "output_type_id": {
-                                                    "description": "Object containing required and optional arrays specifying valid categories of a discrete variable.",
+                                                    "description": "Object containing required and optional arrays specifying valid categories of a discrete variable. Note that for ordinal variables, the category levels should be listed in order from low to high.",
                                                     "examples": [{
                                                         "required": null,
                                                         "optional": [
