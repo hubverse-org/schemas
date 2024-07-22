@@ -1,3 +1,9 @@
+# v3.0.1
+
+* Introduction of `output_type_id_datatype` property to enable hub administrators to configure and communicate the `output_type_id` column data type at a hub level. This will allow hubs to override default behaviour of automatically determinining the simplest data type that can accomodate output type IDs across all output types when creating hub schema. The setting is also useful for administrators to future proof the `output_type_id` column from potential issues arising by changes in data type, introduced by new output types after submissions have begun, by setting `output_type_id_datatype` to the simplest data type from the start, i.e. character (#87).
+
+
+
 # v3.0.0
 
 * Breaking change: introduction of new `sample` output type id schema specification in `tasks.json`. The main breaking change is the removal of the `output_type_id` property in `sample`. Instead, the collection of samples is defined through a new `output_type_id_params` object (#70).
