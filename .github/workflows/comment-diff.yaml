@@ -1,0 +1,45 @@
+name: "Generate New Spec Diff"
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  comment-changed-workflow:
+    name: 'Comment Spec Diff'
+    runs-on: ubuntu-latest
+    if: ${{ github.event.issue.pull_request && (github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'OWNER') && startsWith(github.event.comment.body, '/diff') }}
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/pr-fetch@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Record DIFF"
+        id: dl
+        run: |
+          echo "body<<EOF" >> $GITHUB_ENV
+          echo "" >> $GITHUB_ENV
+          old=$(ls -d */ | sort | tail -n 2 | head -n 1)
+          new=$(ls -d */ | sort | tail -n 1)
+          echo "Here are your diffs for this pull request" >> $GITHUB_ENV
+          echo "" >> $GITHUB_ENV
+          echo '## `admin-schema.json`' >> $GITHUB_ENV
+          echo "" >> $GITHUB_ENV
+          echo '```diff' >> $GITHUB_ENV
+          echo "$(diff -u ${old}admin-schema.json ${new}admin-schema.json)" >> $GITHUB_ENV
+          echo '```' >> $GITHUB_ENV
+          echo "" >> $GITHUB_ENV
+          echo '## `tasks-schema.json`' >> $GITHUB_ENV
+          echo "" >> $GITHUB_ENV
+          echo '```diff' >> $GITHUB_ENV
+          echo "$(diff -u ${old}tasks-schema.json ${new}tasks-schema.json)" >> $GITHUB_ENV
+          echo '```' >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      - name: "Comment on PR"
+        uses: carpentries/actions/comment-diff@5d73d6a34b013488264890868d8eeab1edffdf2e
+        with:
+          pr: ${{ github.event.issue.number }}
+          body: ${{ env.body }}
+
