@@ -46,16 +46,31 @@ diff -u --color=always $(ls -d */ | sort | tail -n 2 | head -n 1)admin-schema.js
 diff -u --color=always $(ls -d */ | sort | tail -n 2 | head -n 1)tasks-schema.json $(ls -d */ | sort | tail -n 1)tasks-schema.json
 ```
 
-> ### :bulb: Tip
+> ### :bulb: Tips
+> 
+> #### Show diff colours in PR
+> To show the colour of the diffs in the PR, wrap the output of the commands in a `diff` code block, e.g.
 >
+> \```diff  
+> \- old line   
+> \+ new line    
+> \```    
+> is rendered in the PR renders as:
+> 
+> ```diff
+> - old line
+> + new line
+> ```
+>
+> #### Send output directly to clipboard
 > Depending on your system (macOS or Linux), you can pipe the output of the above commands directly to the clipboard. See examples below:
 > 
-> #### macOS:
+> ##### macOS:
 > ```bash
 > diff $(ls -d */ | sort | tail -n 2 | head -n 1)tasks-schema.json $(ls -d */ | sort | tail -n 1)tasks-schema.json | pbcopy
 >```
 >
-> #### Linux:
+> ##### Linux:
 > Make sure `xclip` is installed. You can install it using your package manager, e.g., `sudo apt-get install xclip` on Debian-based systems.
 > ```bash
 > diff $(ls -d */ | sort | tail -n 2 | head -n 1)tasks-schema.json $(ls -d */ | sort | tail -n 1)tasks-schema.json | xclip -selection clipboard
