@@ -1446,6 +1446,7 @@
             "examples": ["character"],
             "type": "string",
             "enum": [
+                "auto",
                 "character", 
                 "double", 
                 "integer",
