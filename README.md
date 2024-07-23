@@ -20,6 +20,7 @@ The [`HubDocs`](https://hubdocs.readthedocs.io/en/latest/index.html) documentati
 
 After making a new release to the schema repository, ensure `hubDocs` are also appropriately updated and an associated new release in the `hubDocs` repository also created.
 
+
 ## New schema version development process
 
 - New schema versions should be developed in a separate branch. Name the branch `v{version-number}-branch` to avoid creating release tags which share the same name as a branch later on.
@@ -28,3 +29,18 @@ After making a new release to the schema repository, ensure `hubDocs` are also a
 - Update `HubDocs` site with any additional relevant information associated with the new schema release.
 - Create a new release on `hubDocs` using the same version number but without the `v` (e.g. `v0.0.1` would be released as `0.0.1` on `hubDocs`).
 - Update the [`hubTemplate`](https://github.com/hubverse-org/hubTemplate) config to reflect the most up to date schema. Create a new release using the same version.
+
+
+### Highlighting changes to schema in PRs
+
+To bring attention to the changes in new schema versions, it's useful to include in any PR, a print out of the diffs in the `tasks-schema.json` and `admin-schema.json` files compared to the previous version. To print the diffs in each file you can use the following commands in the terminal:
+
+#### `admin-schema.json`
+
+```
+diff -u --color=always $(ls -d */ | sort | tail -n 2 | head -n 1)admin-schema.json $(ls -d */ | sort | tail -n 1)admin-schema.json
+```
+#### `tasks-schema.json`
+```
+diff -u --color=always $(ls -d */ | sort | tail -n 2 | head -n 1)tasks-schema.json $(ls -d */ | sort | tail -n 1)tasks-schema.json
+```
