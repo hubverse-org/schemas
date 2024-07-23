@@ -31,16 +31,33 @@ After making a new release to the schema repository, ensure `hubDocs` are also a
 - Update the [`hubTemplate`](https://github.com/hubverse-org/hubTemplate) config to reflect the most up to date schema. Create a new release using the same version.
 
 
-### Highlighting changes to schema in PRs
+## Highlighting changes to schema in PRs
 
 To bring attention to the changes in new schema versions, it's useful to include in any PR, a print out of the diffs in the `tasks-schema.json` and `admin-schema.json` files compared to the previous version. To print the diffs in each file you can use the following commands in the terminal:
 
 #### `admin-schema.json`
 
-```
+```bash
 diff -u --color=always $(ls -d */ | sort | tail -n 2 | head -n 1)admin-schema.json $(ls -d */ | sort | tail -n 1)admin-schema.json
 ```
 #### `tasks-schema.json`
-```
+
+```bash
 diff -u --color=always $(ls -d */ | sort | tail -n 2 | head -n 1)tasks-schema.json $(ls -d */ | sort | tail -n 1)tasks-schema.json
 ```
+
+> ### :bulb: Tip
+>
+> Depending on your system (macOS or Linux), you can pipe the output of the above commands directly to the clipboard. See examples below:
+> 
+> #### macOS:
+> ```bash
+> diff $(ls -d */ | sort | tail -n 2 | head -n 1)tasks-schema.json $(ls -d */ | sort | tail -n 1)tasks-schema.json | pbcopy
+>```
+>
+> #### Linux:
+> Make sure `xclip` is installed. You can install it using your package manager, e.g., `sudo apt-get install xclip` on Debian-based systems.
+> ```bash
+> diff $(ls -d */ | sort | tail -n 2 | head -n 1)tasks-schema.json $(ls -d */ | sort | tail -n 1)tasks-schema.json | xclip -selection clipboard
+>```
+>
