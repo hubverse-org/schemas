@@ -1441,7 +1441,7 @@
             }
         },
         "output_type_id_datatype": {
-            "description": "The hub level data type of the output_type_id column. This data type must be shared across all files in the hub and be able to represent all output type ID values across all hub output types and rounds. If not provided, hub defaults to autodetecting the simplest hub level data type.",
+            "description": "The hub level data type of the output_type_id column. This data type must be shared across all files in the hub and be able to represent all output type ID values across all hub output types and rounds. If not provided or set to 'auto', hub defaults to autodetecting the simplest hub level data type.",
             "default": "auto",
             "examples": ["character"],
             "type": "string",
