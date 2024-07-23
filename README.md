@@ -75,7 +75,6 @@ diff -u --color=always $(ls -d */ | sort | tail -n 2 | head -n 1)tasks-schema.js
 > ```
 >
 > #### Send output directly to clipboard
-
 > Depending on your system (macOS or Linux), you can pipe the output of the above commands directly to the clipboard. See examples below:
 > 
 > ##### macOS:
