@@ -1,6 +1,7 @@
 # v3.0.1
 
 * Introduction of optional `output_type_id_datatype` property to enable hub administrators to configure and communicate the `output_type_id` column data type at a hub level. This will allow hubs to override default behaviour of automatically determinining the simplest data type that can accomodate output type IDs across all output types when creating hub schema. The setting is also useful for administrators to future proof the `output_type_id` column from potential issues arising by changes in data type, introduced by new output types after submissions have begun, by setting `output_type_id_datatype` to the simplest data type from the start, i.e. character (#87).
+* Removed restrictive epidemic week formatting requirements for CDF `output_type_id` values. Character output type IDs no longer need to conform to the regex pattern `^EW[0-9]{6}` (e.g. `"EW202240"`) (#80).
 
 
 

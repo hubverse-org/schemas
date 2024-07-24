@@ -946,10 +946,7 @@
                                                                         "minimum": 0
                                                                     },
                                                                     {
-                                                                        "type": "string",
-                                                                        "pattern": "^EW[0-9]{6}",
-                                                                        "minLength": 8,
-                                                                        "maxLength": 8
+                                                                        "type": "string"
                                                                     }
                                                                 ]
                                                             }
@@ -970,10 +967,7 @@
                                                                         "minimum": 0
                                                                     },
                                                                     {
-                                                                        "type": "string",
-                                                                        "pattern": "^EW[0-9]{6}",
-                                                                        "minLength": 8,
-                                                                        "maxLength": 8
+                                                                        "type": "string"
                                                                     }
                                                                 ]
                                                             }
