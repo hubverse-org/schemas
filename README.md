@@ -33,7 +33,19 @@ After making a new release to the schema repository, ensure `hubDocs` are also a
 
 ## Highlighting changes to schema in PRs
 
-To bring attention to the changes in new schema versions, it's useful to include in any PR, a print out of the diffs in the `tasks-schema.json` and `admin-schema.json` files compared to the previous version. To print the diffs in each file you can use the following commands in the terminal:
+To bring attention to the changes in new schema versions, it's useful to include in any PR, a print out of the diffs in the `tasks-schema.json` and `admin-schema.json` files compared to the previous version. 
+
+### Automated Process (via GitHub)
+
+After you create a new Pull Request, if you create a new comment with `/diff`, GitHub will automatically generate the diffs of the `tasks-schema.json` and `admin-schema.json` and comment on the pull request.
+
+If you need to update the schema after review, you can update the diffs by creating another `/diff` comment.
+
+If this does not work for any reason, you can follow the manual process below.
+
+### Manual Process
+
+To print the diffs in each file you can use the following commands in the terminal:
 
 #### `admin-schema.json`
 
