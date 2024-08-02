@@ -26,6 +26,7 @@ After making a new release to the schema repository, ensure `hubDocs` are also a
 - New schema versions should be developed in a separate branch. Name the branch `v{version-number}-branch` to avoid creating release tags which share the same name as a branch later on.
 - New version branches should be merged into `main` when ready to released.
 - Merging into `main` should be accompanied by creating an associated formal release in the repository.
+- Re-run all tests in `hubAdmin`, address any introduced problems and update snapshots to latest schema version.
 - Update `HubDocs` site with any additional relevant information associated with the new schema release.
 - Create a new release on `hubDocs` using the same version number but without the `v` (e.g. `v0.0.1` would be released as `0.0.1` on `hubDocs`).
 - Update the [`hubTemplate`](https://github.com/hubverse-org/hubTemplate) config to reflect the most up to date schema. Create a new release using the same version.
