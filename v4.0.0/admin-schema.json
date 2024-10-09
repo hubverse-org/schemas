@@ -51,9 +51,11 @@
           "enum": ["github"]
         },
         "owner": {
+          "description": "The hub repository owner (user or organisation).",
           "type": "string"
         },
         "name": {
+          "description": "The name of the hub repository.",
           "type": "string"
         }
       }
