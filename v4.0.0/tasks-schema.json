@@ -1206,6 +1206,16 @@
       ]
     }
   },
+  "derived_task_ids": {
+    "description": "Names of derived task IDs, i.e. task IDs whose values are derived from (and therefore dependent on) the values of other variables.",
+    "type": [
+      "array", "null"
+    ],
+    "uniqueItems": true,
+    "items": {
+      "type": "string"
+    }
+  },
   "required": [
     "rounds", "schema_version"
   ],
