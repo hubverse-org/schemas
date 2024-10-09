@@ -513,51 +513,24 @@
                       "description": "Object defining the mean of the predictive distribution output type.",
                       "properties": {
                         "output_type_id": {
-                          "description": "output_type_id is not meaningful for a mean output_type. The property is primarily used to determine whether mean is a required or optional output type through properties required and optional. If mean is a required output type, the required property must be an array containing the single string element 'NA' and the optional property must be set to null. If mean is an optional output type, the optional property must be an array containing the single string element 'NA' and the required property must be set to null",
+                          "description": "output_type_id is not meaningful for a point estimate output_type.",
                           "examples": [
                             {
-                              "required": ["NA"],
-                              "optional": null
-                            }, {
-                              "required": null,
-                              "optional": ["NA"]
+                              "required": ["NA"]
                             }
                           ],
                           "type": "object",
-                          "oneOf": [
-                            {
-                              "properties": {
-                                "required": {
-                                  "description": "When mean is required, property set to single element 'NA' array",
-                                  "type": "array",
-                                  "items": {
-                                    "const": "NA",
-                                    "maxItems": 1
-                                  }
-                                },
-                                "optional": {
-                                  "description": "When mean is required, property set to null",
-                                  "type": "null"
-                                }
-                              }
-                            }, {
-                              "properties": {
-                                "required": {
-                                  "description": "When mean is optional, property set to null",
-                                  "type": "null"
-                                },
-                                "optional": {
-                                  "description": "When mean is optional, property set to single element 'NA' array",
-                                  "type": "array",
-                                  "items": {
-                                    "const": "NA",
-                                    "maxItems": 1
-                                  }
-                                }
+                          "properties": {
+                            "required": {
+                              "description": "Not relevant for point estimate output types. Must be single element 'NA' array.",
+                              "type": "array",
+                              "items": {
+                                "const": "NA",
+                                "maxItems": 1
                               }
                             }
-                          ],
-                          "required": ["required", "optional"]
+                          },
+                          "required": ["required"]
                         },
                         "value": {
                           "type": "object",
@@ -584,64 +557,48 @@
                             }
                           },
                           "required": ["type"]
+                        },
+                        "is_required": {
+                          "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
+                          "examples": [
+                            {
+                              "is_required": true
+                            }, {
+                              "is_required": false
+                            }
+                          ],
+                          "type": "boolean"
                         }
                       },
-                      "required": ["output_type_id", "value"]
+                      "required": ["output_type_id", "value", "is_required"]
                     },
                     "median": {
                       "type": "object",
                       "description": "Object defining the median of the predictive distribution output type",
                       "properties": {
                         "output_type_id": {
-                          "description": "output_type_id is not meaningful for a median output_type. The property is primarily used to determine whether median is a required or optional output type through properties required and optional. If median is a required output type, the required property must be an array containing the single string element 'NA' and the optional property must be set to null. If median is an optional output type, the optional property must be an array containing the single string element 'NA' and the required property must be set to null",
+                          "description": "output_type_id is not meaningful for a point estimate output_type.",
                           "examples": [
                             {
-                              "required": ["NA"],
-                              "optional": null
-                            }, {
-                              "required": null,
-                              "optional": ["NA"]
+                              "required": ["NA"]
                             }
                           ],
                           "type": "object",
-                          "oneOf": [
-                            {
-                              "properties": {
-                                "required": {
-                                  "description": "When median is required, property set to single element 'NA' array",
-                                  "type": "array",
-                                  "items": {
-                                    "const": "NA",
-                                    "maxItems": 1
-                                  }
-                                },
-                                "optional": {
-                                  "description": "When median is required, property set to null",
-                                  "type": "null"
-                                }
-                              }
-                            }, {
-                              "properties": {
-                                "required": {
-                                  "description": "When median is optional, property set to null",
-                                  "type": "null"
-                                },
-                                "optional": {
-                                  "description": "When median is optional, property set to single element 'NA' array",
-                                  "type": "array",
-                                  "items": {
-                                    "const": "NA",
-                                    "maxItems": 1
-                                  }
-                                }
+                          "properties": {
+                            "required": {
+                              "description": "Not relevant for point estimate output types. Must be single element 'NA' array.",
+                              "type": "array",
+                              "items": {
+                                "const": "NA",
+                                "maxItems": 1
                               }
                             }
-                          ],
-                          "required": ["required", "optional"]
+                          },
+                          "required": ["required"]
                         },
                         "value": {
                           "type": "object",
-                          "description": "Object defining the characteristics of valid median values",
+                          "description": "Object defining the characteristics of valid mean values.",
                           "examples": [
                             {
                               "type": "double",
@@ -650,7 +607,7 @@
                           ],
                           "properties": {
                             "type": {
-                              "description": "Data type of median values",
+                              "description": "Data type of median values.",
                               "type": "string",
                               "enum": ["double", "integer"]
                             },
@@ -664,28 +621,39 @@
                             }
                           },
                           "required": ["type"]
+                        },
+                        "is_required": {
+                          "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
+                          "examples": [
+                            {
+                              "is_required": true
+                            }, {
+                              "is_required": false
+                            }
+                          ],
+                          "type": "boolean"
                         }
                       },
-                      "required": ["output_type_id", "value"]
+                      "required": ["output_type_id", "value", "is_required"]
                     },
                     "quantile": {
                       "description": "Object defining the quantiles of the predictive distribution output type.",
                       "type": "object",
                       "properties": {
                         "output_type_id": {
-                          "description": "Object containing required and optional arrays defining the probability levels at which quantiles of the predictive distribution will be recorded.",
+                          "description": "Object containing arrays of required probability levels at which quantiles of the predictive distribution will be recorded.",
                           "examples": [
                             {
                               "required": [
-                                0.25, 0.5, 0.75
-                              ],
-                              "optional": [
                                 0.1,
                                 0.2,
+                                0.25,
                                 0.3,
                                 0.4,
+                                0.5,
                                 0.6,
                                 0.7,
+                                0.75,
                                 0.8,
                                 0.9
                               ]
@@ -694,22 +662,8 @@
                           "type": "object",
                           "properties": {
                             "required": {
-                              "description": "Array of unique probability levels between 0 and 1 that must be present for submission to be valid. Can be null if no probability levels are required and all valid probability levels are specified in the optional property.",
-                              "type": [
-                                "array", "null"
-                              ],
-                              "uniqueItems": true,
-                              "items": {
-                                "type": "number",
-                                "minimum": 0,
-                                "maximum": 1
-                              }
-                            },
-                            "optional": {
-                              "description": "Array of valid but not required unique probability levels. Can be null if all probability levels are required and are specified in the required property.",
-                              "type": [
-                                "array", "null"
-                              ],
+                              "description": "Array of unique probability levels between 0 and 1 inclusive that must be present for submission to be valid.",
+                              "type": "array",
                               "uniqueItems": true,
                               "items": {
                                 "type": "number",
@@ -718,7 +672,7 @@
                               }
                             }
                           },
-                          "required": ["required", "optional"]
+                          "required": ["required"]
                         },
                         "value": {
                           "type": "object",
@@ -741,22 +695,30 @@
                             }
                           },
                           "required": ["type"]
+                        },
+                        "is_required": {
+                          "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
+                          "examples": [
+                            {
+                              "is_required": true
+                            }, {
+                              "is_required": false
+                            }
+                          ],
+                          "type": "boolean"
                         }
                       },
-                      "required": ["output_type_id", "value"]
+                      "required": ["output_type_id", "value", "is_required"]
                     },
                     "cdf": {
                       "description": "Object defining the cumulative distribution function of the predictive distribution output type.",
                       "type": "object",
                       "properties": {
                         "output_type_id": {
-                          "description": "Object containing required and optional arrays defining possible values of the target variable at which values of the cumulative distribution function of the predictive distribution will be recorded. These should be listed in order from low to high.",
+                          "description": "Object containing required arrays defining possible values of the target variable at which values of the cumulative distribution function of the predictive distribution will be recorded. These should be listed in order from low to high.",
                           "examples": [
                             {
-                              "required": [
-                                10.0, 20.0
-                              ],
-                              "optional": null
+                              "required": [10.0, 20.0]
                             }, {
                               "required": [
                                 "EW202240",
@@ -767,36 +729,14 @@
                                 "EW202245",
                                 "EW202246",
                                 "EW202247"
-                              ],
-                              "optional": null
+                              ]
                             }
                           ],
                           "type": "object",
                           "properties": {
                             "required": {
-                              "description": "Array of unique target values that must be present for submission to be valid. Can be null if no target values are required and all valid target values are specified in the optional property.",
-                              "type": [
-                                "array", "null"
-                              ],
-                              "uniqueItems": true,
-                              "items": {
-                                "oneOf": [
-                                  {
-                                    "type": [
-                                      "number", "integer"
-                                    ],
-                                    "minimum": 0
-                                  }, {
-                                    "type": "string"
-                                  }
-                                ]
-                              }
-                            },
-                            "optional": {
-                              "description": "Array of valid but not required unique target values. Can be null if all target values are required and are specified in the required property.",
-                              "type": [
-                                "array", "null"
-                              ],
+                              "description": "Array of unique target values that must be present for submission to be valid.",
+                              "type": "array",
                               "uniqueItems": true,
                               "items": {
                                 "oneOf": [
@@ -812,7 +752,7 @@
                               }
                             }
                           },
-                          "required": ["required", "optional"]
+                          "required": ["required"]
                         },
                         "value": {
                           "type": "object",
@@ -833,46 +773,44 @@
                             }
                           },
                           "required": ["type", "minimum", "maximum"]
+                        },
+                        "is_required": {
+                          "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
+                          "examples": [
+                            {
+                              "is_required": true
+                            }, {
+                              "is_required": false
+                            }
+                          ],
+                          "type": "boolean"
                         }
                       },
-                      "required": ["output_type_id", "value"]
+                      "required": ["output_type_id", "value", "is_required"]
                     },
                     "pmf": {
                       "description": "Object defining a probability mass function for a discrete variable output type. Includes nominal, binary and ordinal variable types.",
                       "type": "object",
                       "properties": {
                         "output_type_id": {
-                          "description": "Object containing required and optional arrays specifying valid categories of a discrete variable. Note that for ordinal variables, the category levels should be listed in order from low to high.",
+                          "description": "Object containing arrays of required values specifying valid categories of a discrete variable. Note that for ordinal variables, the category levels should be listed in order from low to high.",
                           "examples": [
                             {
-                              "required": null,
-                              "optional": ["low", "moderate", "high", "extreme"]
+                              "required": ["low", "moderate", "high", "extreme"]
                             }
                           ],
                           "type": "object",
                           "properties": {
                             "required": {
-                              "description": "Array of unique categories of a discrete variable that must be present for submission to be valid. Can be null if no categories are required and all valid categories are specified in the optional property.",
-                              "type": [
-                                "array", "null"
-                              ],
-                              "uniqueItems": true,
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "optional": {
-                              "description": "Array of valid but not required unique categories of a discrete variable. Can be null if all categories are required and are specified in the required property.",
-                              "type": [
-                                "array", "null"
-                              ],
+                              "description": "Array of unique categories of a discrete variable that must be present for submission to be valid.",
+                              "type": "array",
                               "uniqueItems": true,
                               "items": {
                                 "type": "string"
                               }
                             }
                           },
-                          "required": ["required", "optional"]
+                          "required": ["required"]
                         },
                         "value": {
                           "type": "object",
@@ -899,9 +837,20 @@
                             }
                           },
                           "required": ["type", "minimum", "maximum"]
+                        },
+                        "is_required": {
+                          "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
+                          "examples": [
+                            {
+                              "is_required": true
+                            }, {
+                              "is_required": false
+                            }
+                          ],
+                          "type": "boolean"
                         }
                       },
-                      "required": ["output_type_id", "value"]
+                      "required": ["output_type_id", "value", "is_required"]
                     },
                     "sample": {
                       "description": "Object defining a sample output type.",
@@ -912,14 +861,12 @@
                           "examples": [
                             {
                               "output_type_id_params": {
-                                "is_required": true,
                                 "type": "integer",
                                 "min_samples_per_task": 100,
                                 "max_samples_per_task": 100
                               }
                             }, {
                               "output_type_id_params": {
-                                "is_required": false,
                                 "type": "character",
                                 "max_length": 6,
                                 "min_samples_per_task": 100,
@@ -930,10 +877,6 @@
                           ],
                           "type": "object",
                           "properties": {
-                            "is_required": {
-                              "description": "Boolean. Whether inclusion of samples is required for the submission to be valid",
-                              "type": "boolean"
-                            },
                             "type": {
                               "description": "Data type of sample indices.",
                               "type": "string",
@@ -964,7 +907,7 @@
                             }
                           },
                           "required": [
-                            "is_required", "type", "min_samples_per_task", "max_samples_per_task"
+                            "type", "min_samples_per_task", "max_samples_per_task"
                           ],
                           "if": {
                             "properties": {
@@ -1001,9 +944,20 @@
                             }
                           },
                           "required": ["type"]
+                        },
+                        "is_required": {
+                          "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
+                          "examples": [
+                            {
+                              "is_required": true
+                            }, {
+                              "is_required": false
+                            }
+                          ],
+                          "type": "boolean"
                         }
                       },
-                      "required": ["output_type_id_params", "value"]
+                      "required": ["output_type_id_params", "value", "is_required"]
                     }
                   },
                   "additionalProperties": false
