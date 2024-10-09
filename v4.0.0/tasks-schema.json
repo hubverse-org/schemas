@@ -154,7 +154,7 @@
                       "description": "An object containing arrays of required and optional unique identifiers for each valid location, e.g. country codes, FIPS state or county level code etc.",
                       "examples": [
                         {
-                          "required": "US",
+                          "required": ["US"],
                           "optional": [
                             "01",
                             "02",
