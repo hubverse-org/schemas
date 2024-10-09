@@ -1,3 +1,9 @@
+# v4.0.0
+
+* BREAKING CHANGE: Introduction of `is_required` boolean property at the `output_type` level to configure whether the output type is required for submissions to be considered valid (#99). 
+* BREAKING CHANGE: Disallowed `optional` property in `output_type_id` objects. As such, when a given output type is submitted, values for all output type IDs much be submitted (#100,#101, #102). 
+* Introduction of optional `derived_task_ids` property to enable hub administrators to define derived task IDs (i.e. task IDs whose values depend on the values of other task IDs) at a hub level. This allows primarily validation functionality to ignore such task IDs when appropriate which can significantly improve validation efficency (#98). For more information see [`hubValidations` documentation on ignoring derived task IDs](https://hubverse-org.github.io/hubValidations/articles/validate-pr.html#ignoring-derived-task-ids-to-improve-performance).
+
 # v3.0.1
 
 * Introduction of optional `output_type_id_datatype` property to enable hub administrators to configure and communicate the `output_type_id` column data type at a hub level. This will allow hubs to override default behaviour of automatically determinining the simplest data type that can accomodate output type IDs across all output types when creating hub schema. The setting is also useful for administrators to future proof the `output_type_id` column from potential issues arising by changes in data type, introduced by new output types after submissions have begun, by setting `output_type_id_datatype` to the simplest data type from the start, i.e. character (#87).
