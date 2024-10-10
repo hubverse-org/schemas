@@ -761,7 +761,7 @@
                                                 },
                                                 "value": {
                                                     "type": "object",
-                                                    "description": "Object defining the characteristics of valid mean values.",
+                                                    "description": "Object defining the characteristics of valid median values.",
                                                     "examples": [
                                                         {
                                                             "type": "double",
