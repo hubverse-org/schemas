@@ -4,7 +4,16 @@ on:
   issue_comment:
     types: [created]
 
+permissions: read-all
+
 jobs:
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
   comment-changed-workflow:
     name: 'Comment Spec Diff'
     runs-on: ubuntu-latest
