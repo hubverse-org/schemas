@@ -7,19 +7,25 @@
     "properties": {
         "schema_version": {
             "description": "URL to a version of the Modeling Hub schema admin-schema.json file (see https://github.com/hubverse-org/schemas). Used to declare the schema version an 'admin.json' file is written for and for config file validation. The URL provided should be the URL to the raw content of the schema file on GitHub.",
-            "examples": ["https://raw.githubusercontent.com/hubverse-org/schemas/main/v3.0.0/admin-schema.json"],
+            "examples": [
+                "https://raw.githubusercontent.com/hubverse-org/schemas/main/v3.0.0/admin-schema.json"
+            ],
             "type": "string",
             "format": "uri"
         },
         "name": {
             "description": "The name of the hub.",
             "type": "string",
-            "examples": ["US COVID-19 Forecast Hub​"]
+            "examples": [
+                "US COVID-19 Forecast Hub​"
+            ]
         },
         "maintainer": {
             "description": "The entity that maintains and runs the hub.",
             "type": "string",
-            "examples": ["The Consortium of Infectious Disease Modeling Hubs"]
+            "examples": [
+                "The Consortium of Infectious Disease Modeling Hubs"
+            ]
         },
         "contact": {
             "description": "The name and email of a human being who serves as a point of contact for the hub.",
@@ -36,17 +42,21 @@
         },
         "repository": {
             "description": "Object containing details of the hub repository.",
-            "examples": [{
-                "host": "github",
-                "owner": "hubverse-org",
-                "name": "example-simple-forecast-hub"
-            }],
+            "examples": [
+                {
+                    "host": "github",
+                    "owner": "hubverse-org",
+                    "name": "example-simple-forecast-hub"
+                }
+            ],
             "type": "object",
             "properties": {
                 "host": {
                     "description": "The name of the web host for the hub repository",
                     "type": "string",
-                    "enum": ["github"]
+                    "enum": [
+                        "github"
+                    ]
                 },
                 "owner": {
                     "type": "string"
@@ -59,18 +69,27 @@
         "zoltar_project_id": {
             "description": "The project id of the Hub in Zoltar",
             "type": "integer",
-            "examples": [44]
+            "examples": [
+                44
+            ]
         },
         "citation": {
             "description": "One or more citations for the hub.",
             "type": "string",
-            "examples": ["Cramer, E.Y., Huang, Y., Wang, Y. et al. The United States COVID-19 Forecast Hub dataset. Sci Data 9, 462 (2022). https://doi.org/10.1038/s41597-022-01517-w"]
+            "examples": [
+                "Cramer, E.Y., Huang, Y., Wang, Y. et al. The United States COVID-19 Forecast Hub dataset. Sci Data 9, 462 (2022). https://doi.org/10.1038/s41597-022-01517-w"
+            ]
         },
         "file_format": {
             "description": "Accepted file formats of model output files.",
             "examples": [
-                ["arrow", "parquet"],
-                ["csv"]
+                [
+                    "arrow",
+                    "parquet"
+                ],
+                [
+                    "csv"
+                ]
             ],
             "type": "array",
             "items": {
@@ -624,20 +643,30 @@
             "description": "Optional settings for cloud-enabled hubs",
             "type": "object",
             "properties": {
-                "enabled": {"type": "boolean"},
+                "enabled": {
+                    "type": "boolean"
+                },
                 "host": {
                     "type": "object",
-                    "required": ["name", "storage_service", "storage_location"],
+                    "required": [
+                        "name",
+                        "storage_service",
+                        "storage_location"
+                    ],
                     "properties": {
                         "name": {
                             "description": "Name of the cloud storage provider.",
                             "type": "string",
-                            "enum": ["aws"]
+                            "enum": [
+                                "aws"
+                            ]
                         },
                         "storage_service": {
                             "description": "Name of the cloud service used as backend storage",
                             "type": "string",
-                            "enum": ["s3"]
+                            "enum": [
+                                "s3"
+                            ]
                         },
                         "storage_location": {
                             "description": "Cloud storage location, excluding prefix (for example, AWS S3 bucket name).",
@@ -648,11 +677,15 @@
             },
             "if": {
                 "properties": {
-                    "enabled": {"const": true}
+                    "enabled": {
+                        "const": true
+                    }
                 }
             },
             "then": {
-                "required": ["host"]
+                "required": [
+                    "host"
+                ]
             },
             "examples": [
                 {
