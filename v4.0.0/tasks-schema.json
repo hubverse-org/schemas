@@ -1449,6 +1449,22 @@
                                 "arrow"
                             ]
                         }
+                    },
+                    "derived_task_ids": {
+                        "description": "Names of derived task IDs, i.e. task IDs whose values are derived from (and therefore dependent on) the values of other variables. Use this property to override the global setting for a specific round.",
+                        "examples": [
+                            [
+                                "target_end_date"
+                            ]
+                        ],
+                        "type": [
+                            "array",
+                            "null"
+                        ],
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 },
                 "required": [
@@ -1475,17 +1491,22 @@
                 "logical",
                 "Date"
             ]
-        }
-    },
-    "derived_task_ids": {
-        "description": "Names of derived task IDs, i.e. task IDs whose values are derived from (and therefore dependent on) the values of other variables.",
-        "type": [
-            "array",
-            "null"
-        ],
-        "uniqueItems": true,
-        "items": {
-            "type": "string"
+        },
+        "derived_task_ids": {
+            "description": "Names of derived task IDs, i.e. task IDs whose values are derived from (and therefore dependent on) the values of other variables.",
+            "examples": [
+                [
+                    "target_end_date"
+                ]
+            ],
+            "type": [
+                "array",
+                "null"
+            ],
+            "uniqueItems": true,
+            "items": {
+                "type": "string"
+            }
         }
     },
     "required": [
