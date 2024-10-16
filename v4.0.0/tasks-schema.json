@@ -1286,7 +1286,10 @@
                                                 "type": [
                                                     "object",
                                                     "null"
-                                                ]
+                                                ],
+                                                "additionalProperties": {
+                                                    "type": "string"
+                                                }
                                             },
                                             "description": {
                                                 "description": "a verbose description of the target that might include information such as the target_measure above, or definitions of a 'rate' or similar.",
