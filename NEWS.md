@@ -3,6 +3,7 @@
 * BREAKING CHANGE: Introduction of `is_required` boolean property at the `output_type` level to configure whether the output type is required for submissions to be considered valid (#99). 
 * BREAKING CHANGE: Disallowed `optional` property in `output_type_id` objects. As such, when a given output type is submitted, values for all output type IDs much be submitted (#100,#101, #102). 
 * Introduction of optional `derived_task_ids` properties to enable hub administrators to define derived task IDs (i.e. task IDs whose values depend on the values of other task IDs). The higher level `derived_task_ids` property sets the property globally at the hub level but can be overriden by the round level `derived_task_ids` property. The property allows for primarily validation functionality to ignore such task IDs when appropriate which can significantly improve validation efficency (#96). For more information see [`hubValidations` documentation on ignoring derived task IDs](https://hubverse-org.github.io/hubValidations/articles/validate-pr.html#ignoring-derived-task-ids-to-improve-performance).
+* Added more specific schema for `target_keys` to ensure only `string` properties are allowed (#97)
 
 # v3.0.1
 
