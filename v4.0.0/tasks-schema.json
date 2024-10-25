@@ -652,23 +652,17 @@
                                             "description": "Object defining the mean of the predictive distribution output type.",
                                             "properties": {
                                                 "output_type_id": {
-                                                    "description": "output_type_id is not meaningful for a point estimate output_type.",
+                                                    "description": "output_type_id is not meaningful for a point estimate output_type. Must be null",
                                                     "examples": [
                                                         {
-                                                            "required": [
-                                                                "NA"
-                                                            ]
+                                                            "required": null
                                                         }
                                                     ],
                                                     "type": "object",
                                                     "properties": {
                                                         "required": {
-                                                            "description": "Not relevant for point estimate output types. Must be single element 'NA' array.",
-                                                            "type": "array",
-                                                            "items": {
-                                                                "const": "NA",
-                                                                "maxItems": 1
-                                                            }
+                                                            "description": "Not relevant for point estimate output types. Must be null.",
+                                                            "type": "null"
                                                         }
                                                     },
                                                     "required": [
@@ -736,23 +730,17 @@
                                             "description": "Object defining the median of the predictive distribution output type",
                                             "properties": {
                                                 "output_type_id": {
-                                                    "description": "output_type_id is not meaningful for a point estimate output_type.",
+                                                    "description": "output_type_id is not meaningful for a point estimate output_type. Must be null",
                                                     "examples": [
                                                         {
-                                                            "required": [
-                                                                "NA"
-                                                            ]
+                                                            "required": null
                                                         }
                                                     ],
                                                     "type": "object",
                                                     "properties": {
                                                         "required": {
-                                                            "description": "Not relevant for point estimate output types. Must be single element 'NA' array.",
-                                                            "type": "array",
-                                                            "items": {
-                                                                "const": "NA",
-                                                                "maxItems": 1
-                                                            }
+                                                            "description": "Not relevant for point estimate output types. Must be null.",
+                                                            "type": "null"
                                                         }
                                                     },
                                                     "required": [
