@@ -652,7 +652,7 @@
                                             "description": "Object defining the mean of the predictive distribution output type.",
                                             "properties": {
                                                 "output_type_id": {
-                                                    "description": "output_type_id is not meaningful for a point estimate output_type. Must be null",
+                                                    "description": "output_type_id is not meaningful for a point estimate output_type. Must have a single property named 'required' with the value null.",
                                                     "examples": [
                                                         {
                                                             "required": null
