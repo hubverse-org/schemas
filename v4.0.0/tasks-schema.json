@@ -92,7 +92,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "forecast_date": {
                                             "description": "An object containing arrays of required and optional unique forecast dates. Forecast date usually defines the date that a model is run to produce a forecast.",
@@ -136,7 +137,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "scenario_id": {
                                             "description": "An object containing arrays of required and optional unique identifiers of each valid scenario.",
@@ -194,7 +196,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "location": {
                                             "description": "An object containing arrays of required and optional unique identifiers for each valid location, e.g. country codes, FIPS state or county level code etc.",
@@ -286,7 +289,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "target": {
                                             "description": "An object containing arrays of required and optional unique identifiers for each valid target. Usually represents a single task ID target key variable.",
@@ -334,7 +338,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "target_variable": {
                                             "description": "An object containing arrays of required and optional unique identifiers for each valid target variable. Usually forms part of a pair of task ID target key variables (along with target_outcome) which combine to define individual targets.",
@@ -384,7 +389,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "target_outcome": {
                                             "description": "An object containing arrays of required and optional unique identifiers for each valid target outcome. Usually forms part of a pair of task ID target key variables (along with target_variable) which combine to define individual targets.",
@@ -432,7 +438,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "target_date": {
                                             "description": "An object containing arrays of required and optional unique target dates. For short-term forecasts, the target_date specifies the date of occurrence of the outcome of interest. For instance, if models are requested to forecast the number of hospitalizations that will occur on 2022-07-15, the target_date is 2022-07-15",
@@ -476,7 +483,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "target_end_date": {
                                             "description": "An object containing arrays of required and optional unique target end dates. For short-term forecasts, the target_end_date specifies the date of occurrence of the outcome of interest. For instance, if models are requested to forecast the number of hospitalizations that will occur on 2022-07-15, the target_end_date is 2022-07-15",
@@ -520,7 +528,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "horizon": {
                                             "description": "An object containing arrays of required and optional unique horizons. Horizons define the difference between the target_date and the origin_date in time units specified by the hub (e.g., may be days, weeks, or months)",
@@ -569,7 +578,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "age_group": {
                                             "type": "object",
@@ -613,7 +623,8 @@
                                             "required": [
                                                 "required",
                                                 "optional"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         }
                                     },
                                     "additionalProperties": {
@@ -640,7 +651,8 @@
                                         "required": [
                                             "required",
                                             "optional"
-                                        ]
+                                        ],
+                                        "additionalProperties": false
                                     }
                                 },
                                 "output_type": {
@@ -667,7 +679,8 @@
                                                     },
                                                     "required": [
                                                         "required"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "value": {
                                                     "type": "object",
@@ -704,7 +717,8 @@
                                                     },
                                                     "required": [
                                                         "type"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "is_required": {
                                                     "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
@@ -723,7 +737,8 @@
                                                 "output_type_id",
                                                 "value",
                                                 "is_required"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "median": {
                                             "type": "object",
@@ -745,7 +760,8 @@
                                                     },
                                                     "required": [
                                                         "required"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "value": {
                                                     "type": "object",
@@ -782,7 +798,8 @@
                                                     },
                                                     "required": [
                                                         "type"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "is_required": {
                                                     "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
@@ -801,7 +818,8 @@
                                                 "output_type_id",
                                                 "value",
                                                 "is_required"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "quantile": {
                                             "description": "Object defining the quantiles of the predictive distribution output type.",
@@ -841,7 +859,8 @@
                                                     },
                                                     "required": [
                                                         "required"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "value": {
                                                     "type": "object",
@@ -878,7 +897,8 @@
                                                     },
                                                     "required": [
                                                         "type"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "is_required": {
                                                     "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
@@ -897,7 +917,8 @@
                                                 "output_type_id",
                                                 "value",
                                                 "is_required"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "cdf": {
                                             "description": "Object defining the cumulative distribution function of the predictive distribution output type.",
@@ -949,7 +970,8 @@
                                                     },
                                                     "required": [
                                                         "required"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "value": {
                                                     "type": "object",
@@ -975,7 +997,8 @@
                                                         "type",
                                                         "minimum",
                                                         "maximum"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "is_required": {
                                                     "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
@@ -994,7 +1017,8 @@
                                                 "output_type_id",
                                                 "value",
                                                 "is_required"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "pmf": {
                                             "description": "Object defining a probability mass function for a discrete variable output type. Includes nominal, binary and ordinal variable types.",
@@ -1025,7 +1049,8 @@
                                                     },
                                                     "required": [
                                                         "required"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "value": {
                                                     "type": "object",
@@ -1055,7 +1080,8 @@
                                                         "type",
                                                         "minimum",
                                                         "maximum"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "is_required": {
                                                     "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
@@ -1074,7 +1100,8 @@
                                                 "output_type_id",
                                                 "value",
                                                 "is_required"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         },
                                         "sample": {
                                             "description": "Object defining a sample output type.",
@@ -1157,7 +1184,8 @@
                                                         "required": [
                                                             "max_length"
                                                         ]
-                                                    }
+                                                    },
+                                                    "additionalProperties": false
                                                 },
                                                 "value": {
                                                     "type": "object",
@@ -1193,7 +1221,8 @@
                                                     },
                                                     "required": [
                                                         "type"
-                                                    ]
+                                                    ],
+                                                    "additionalProperties": false
                                                 },
                                                 "is_required": {
                                                     "description": "Is output type required? When required, property should be set to 'true'. If output type is optional, set to 'false'.",
@@ -1212,7 +1241,8 @@
                                                 "output_type_id_params",
                                                 "value",
                                                 "is_required"
-                                            ]
+                                            ],
+                                            "additionalProperties": false
                                         }
                                     },
                                     "additionalProperties": false
@@ -1349,7 +1379,8 @@
                                 "task_ids",
                                 "output_type",
                                 "target_metadata"
-                            ]
+                            ],
+                            "additionalProperties": false
                         }
                     },
                     "submissions_due": {
@@ -1386,7 +1417,8 @@
                                     "relative_to",
                                     "start",
                                     "end"
-                                ]
+                                ],
+                                "additionalProperties": false
                             },
                             {
                                 "properties": {
@@ -1404,7 +1436,8 @@
                                 "required": [
                                     "start",
                                     "end"
-                                ]
+                                ],
+                                "additionalProperties": false
                             }
                         ],
                         "required": [
