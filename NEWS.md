@@ -5,6 +5,8 @@
 * BREAKING CHANGE: To improve cross-platform interoperability, expectation of missing values in point estimate `output_type_id` `required` properties now encoded with `null` instead of `["NA"]` (#109). 
 * Introduction of optional `derived_task_ids` properties to enable hub administrators to define derived task IDs (i.e. task IDs whose values depend on the values of other task IDs). The higher level `derived_task_ids` property sets the property globally at the hub level but can be overriden by the round level `derived_task_ids` property. The property allows for primarily validation functionality to ignore such task IDs when appropriate which can significantly improve validation efficency (#96). For more information see [`hubValidations` documentation on ignoring derived task IDs](https://hubverse-org.github.io/hubValidations/articles/validate-pr.html#ignoring-derived-task-ids-to-improve-performance).
 * Added more specific schema for `target_keys` to ensure only `string` properties are allowed (#97)
+* Removed the requirement for a minimum value of zero in `cdf` numeric `output_type_id`s (#113).
+* Ensured that additional properties are not allowed in lower level properties (e.g. individual task IDs, `output_type` objects etc). Custom additional properties are only allowed at the `round` level, while additional task ID objects that match the expected task ID schema are allowed in the `task_ids` object (#114).
 
 # v3.0.1
 
