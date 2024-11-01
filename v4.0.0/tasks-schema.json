@@ -958,8 +958,7 @@
                                                                         "type": [
                                                                             "number",
                                                                             "integer"
-                                                                        ],
-                                                                        "minimum": 0
+                                                                        ]
                                                                     },
                                                                     {
                                                                         "type": "string"
