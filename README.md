@@ -23,7 +23,7 @@ After making a new release to the schema repository, ensure `hubDocs` are also a
 
 ## New schema version development process
 
-- New schema versions should be developed in a separate branch. Name the branch `v{version-number}-branch` to avoid creating release tags which share the same name as a branch later on.
+- New schema versions should be developed in a separate branch. Name the branch `br-v{version-number}` to avoid creating release tags which share the same name as a branch later on.
 - New version branches should be merged into `main` when ready to released.
 - Merging into `main` should be accompanied by creating an associated formal release in the repository.
 - Re-run all tests in `hubAdmin`, address any introduced problems and update snapshots to latest schema version.
