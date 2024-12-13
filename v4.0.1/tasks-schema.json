@@ -1493,7 +1493,7 @@
                 "if": {
                     "properties": {
                         "round_id_from_variable": {
-                            "const": "false"
+                            "const": false
                         }
                     }
                 },
