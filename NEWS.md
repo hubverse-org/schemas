@@ -1,3 +1,9 @@
+# v4.0.1
+
+This release contains the following non-breaking changes: 
+
+* Added explicit checks of `round_id` format through a regex `pattern` check to the `round.round_id` property when `round.round_id_from_variable` is `false`. This provides upfront validation of the expected format of manual round IDs (i.e. those not source from a task ID).
+
 # v4.0.0
 
 * BREAKING CHANGE: Introduction of `is_required` boolean property at the `output_type` level to configure whether the output type is required for submissions to be considered valid (#99). 
