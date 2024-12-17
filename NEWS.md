@@ -2,7 +2,7 @@
 
 This release contains the following non-breaking changes: 
 
-* Added explicit checks of `round_id` format through a regex `pattern` check to the `round.round_id` property when `round.round_id_from_variable` is `false`. This provides upfront validation of the expected format of manual round IDs (i.e. those not source from a task ID).
+* Added explicit checks of `round_id` format through a regex `pattern` check to the `round.round_id` property when `round.round_id_from_variable` is `false`. This provides upfront validation of the expected format of manual round IDs (i.e. those not source from a task ID) (#112).
 
 # v4.0.0
 
