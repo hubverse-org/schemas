@@ -1290,20 +1290,14 @@
                                                     {
                                                         "target": "peak week hosp"
                                                     },
-                                                    {
-                                                        "target_variable": "hosp",
-                                                        "target_outcome": "inc"
-                                                    },
-                                                    {
-                                                        "target_variable": "case",
-                                                        "target_outcome": "peak week"
-                                                    },
                                                     null
                                                 ],
                                                 "type": [
                                                     "object",
                                                     "null"
                                                 ],
+                                                "minProperties": 1,
+                                                "maxProperties": 1,
                                                 "additionalProperties": {
                                                     "type": "string"
                                                 }
