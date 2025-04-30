@@ -1,3 +1,7 @@
+# v5.0.1
+
+* Allow additional properties in `target-metadata` section in `tasks.json` (#126)
+
 # v5.0.0
 
 This release contains the following changes: 
