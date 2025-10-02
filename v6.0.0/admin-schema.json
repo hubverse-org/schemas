@@ -632,15 +632,6 @@
                 "US/Samoa"
             ]
         },
-        "model_output_dir": {
-            "description": "Relative path, with respect to the root of hub, to directory containing model output data. If property not supplied, the default path `model-output` assumed",
-            "default": "model-output",
-            "examples": [
-                "forecasts",
-                "data/model_output"
-            ],
-            "type": "string"
-        },
         "cloud": {
             "description": "Optional settings for cloud-enabled hubs",
             "type": "object",
