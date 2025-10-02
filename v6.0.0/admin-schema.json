@@ -37,7 +37,8 @@
                 "email": {
                     "type": "string",
                     "format": "email"
-                }
+                },
+                "additionalProperties": false
             }
         },
         "repository": {
@@ -65,7 +66,8 @@
                 "name": {
                     "description": "The name of the hub repository.",
                     "type": "string"
-                }
+                },
+                "additionalProperties": false
             }
         },
         "zoltar_project_id": {
@@ -664,9 +666,11 @@
                         "storage_location": {
                             "description": "Cloud storage location, excluding prefix (for example, AWS S3 bucket name).",
                             "type": "string"
-                        }
+                        },
+                        "additionalProperties": false
                     }
-                }
+                },
+                "additionalProperties": false
             },
             "if": {
                 "properties": {
