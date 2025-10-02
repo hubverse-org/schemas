@@ -67,6 +67,7 @@
                     "description": "The name of the hub repository.",
                     "type": "string"
                 },
+                "required": ["host", "owner", "name"],
                 "additionalProperties": false
             }
         },
