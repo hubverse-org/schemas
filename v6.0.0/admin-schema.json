@@ -67,9 +67,13 @@
                     "description": "The name of the hub repository.",
                     "type": "string"
                 },
-                "required": ["host", "owner", "name"],
                 "additionalProperties": false
-            }
+            },
+            "required": [
+                "host",
+                "owner",
+                "name"
+            ]
         },
         "zoltar_project_id": {
             "description": "The project id of the Hub in Zoltar",
